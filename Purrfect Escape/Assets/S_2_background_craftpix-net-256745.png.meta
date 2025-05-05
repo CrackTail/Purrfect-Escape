@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      S_2_background_craftpix-net-256745_0: -2686493002661698696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
