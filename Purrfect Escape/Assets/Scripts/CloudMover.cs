@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CloudLooper : MonoBehaviour
+public class CloudMover : MonoBehaviour
 {
     public Transform[] clouds;
     public float speed = 2f;
