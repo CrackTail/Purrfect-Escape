@@ -7,7 +7,6 @@ public class CatMovement : MonoBehaviour
     private Vector2 Movement;
     private bool FacingRight = true;
     private Animator animatormain;
-
     private void Start()
     {
         animatormain=GetComponent<Animator>();
