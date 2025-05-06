@@ -6,6 +6,7 @@ TagManager:
   tags:
   - teleporter
   - Teleporter
+  - Fish
   layers:
   - Default
   - TransparentFX
