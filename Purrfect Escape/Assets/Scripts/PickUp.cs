@@ -1,21 +1,22 @@
 using UnityEngine;
+
 public class PickUp : MonoBehaviour
 {
     private FishCounter fishCounter;
+    private GameObject fishToDestroy;
 
-    void Start()
-    {
-        fishCounter = FindAnyObjectByType<FishCounter>();
-        if (fishCounter == null)
-            Debug.LogError("FishCounter not found in scene!");
-    }
+    void Start() => fishCounter = FindAnyObjectByType<FishCounter>();
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void Update()
     {
-        if (other.CompareTag("Fish"))
+        if (fishToDestroy && Input.GetKeyDown(KeyCode.E))
         {
             fishCounter.AddFish();
-            Destroy(other.gameObject);
+            Destroy(fishToDestroy);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other) => fishToDestroy = other.CompareTag("Fish") ? other.gameObject : null;
+
+    void OnTriggerExit2D(Collider2D other) => fishToDestroy = other.CompareTag("Fish") ? null : fishToDestroy;
 }
