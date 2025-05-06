@@ -6,12 +6,18 @@ public class CatMovement : MonoBehaviour
     [SerializeField] private float MovementSpeed = 5f;
     private Vector2 Movement;
     private bool FacingRight = true;
+    private Animator animatormain;
 
+    private void Start()
+    {
+        animatormain=GetComponent<Animator>();
+    }
     private void Update()
     {
         float input = Input.GetAxis("Horizontal");
         Movement.x = input * MovementSpeed * Time.deltaTime;
         transform.Translate(Movement);
+        animatormain.SetBool("isRunning",input!=0);
         if (Movement.x > 0 && !FacingRight)
         {
             Flip();
