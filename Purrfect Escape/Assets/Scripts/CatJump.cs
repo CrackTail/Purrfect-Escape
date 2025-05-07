@@ -4,7 +4,7 @@ public class CatJump : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D Rigidbody2D;
     [SerializeField] private float JumpForce = 6;
-    private float JumpCooldown = 1.0f;
+    private float JumpCooldown = 0.7f;
     private float LastJumpTime;
 
     void Start()
