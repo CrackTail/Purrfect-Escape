@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7ec70eceb6aab094da84ccdda5164f5f
+guid: 2265b0604b6babd4a8ab5d7f39a2fb59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7823534288091742939
-    second: ArtRoom_0
+      213: -3057780588267854189
+    second: woman-bust-antique-statue-or-sculpture-portrait-vector-43806764_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ArtRoom_0
+      name: woman-bust-antique-statue-or-sculpture-portrait-vector-43806764_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 635
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd20cc1fbf6c29c60800000000000000
-      internalID: 7823534288091742939
+      spriteID: 396a53b71c49095d0800000000000000
+      internalID: -3057780588267854189
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      ArtRoom_0: 7823534288091742939
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
