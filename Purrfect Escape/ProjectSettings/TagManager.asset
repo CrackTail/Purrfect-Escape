@@ -9,6 +9,7 @@ TagManager:
   - Fish
   - LockedDoor
   - HidingObject
+  - Win
   layers:
   - Default
   - TransparentFX

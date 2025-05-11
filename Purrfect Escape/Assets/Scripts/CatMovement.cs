@@ -4,6 +4,7 @@ using UnityEngine.UIElements;
 
 public class CatMovement : MonoBehaviour
 {
+    [SerializeField] private GameObject GameWin;
     [SerializeField] private float MovementSpeed = 5f;
     private Vector2 Movement;
     private bool FacingRight = true;
@@ -46,6 +47,10 @@ public class CatMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("HidingObject"))
         {
             CanHide = true;
+        }
+        if(collision.gameObject.CompareTag("Win"))
+        {
+            GameWin.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
