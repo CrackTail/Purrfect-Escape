@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BATH TUB_0: -4186142282942096825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

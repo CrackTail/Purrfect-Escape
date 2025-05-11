@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CatMovement : MonoBehaviour
 {
@@ -7,9 +8,12 @@ public class CatMovement : MonoBehaviour
     private Vector2 Movement;
     private bool FacingRight = true;
     private Animator animatormain;
+    private SpriteRenderer rend;
+    private bool CanHide = false;
     private void Start()
     {
         animatormain=GetComponent<Animator>();
+        rend = GetComponent<SpriteRenderer>();
     }
     private void Update()
     {
@@ -25,8 +29,34 @@ public class CatMovement : MonoBehaviour
         {
             Flip();
         }
+        if (CanHide && Input.GetKey(KeyCode.R))
+        {
+            Physics2D.IgnoreLayerCollision(12, 13, true);
+            rend.sortingOrder = 0;
+        }
+        else
+        {
+            Physics2D.IgnoreLayerCollision(12, 13, false);
+            rend.sortingOrder = 12;
+        }
+
     }
-        void Flip()
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("HidingObject"))
+        {
+            CanHide = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("HidingObject"))
+        {
+            CanHide = false;
+        }
+    }
+
+    void Flip()
         {
             FacingRight = !FacingRight;
             Vector3 scale = transform.localScale;

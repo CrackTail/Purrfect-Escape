@@ -8,6 +8,7 @@ TagManager:
   - Teleporter
   - Fish
   - LockedDoor
+  - HidingObject
   layers:
   - Default
   - TransparentFX
@@ -19,10 +20,10 @@ TagManager:
   - 
   - 
   - 
+  - HidingObject
   - 
-  - 
-  - 
-  - 
+  - Cat
+  - Granny
   - 
   - 
   - 
