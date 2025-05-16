@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    private FishCounter fishCounter;
     private GameObject itemToPickUp;
 
-    void Start() => fishCounter = FindAnyObjectByType<FishCounter>();
+    [SerializeField] private GameObject Fish_Icon_Image;
+    [SerializeField] private GameObject Key_Icon_Image;
+
 
     void Update()
     {
@@ -13,15 +14,13 @@ public class PickUp : MonoBehaviour
         {
             if (itemToPickUp.CompareTag("Fish"))
             {
-                fishCounter.AddFish();
+                if (Fish_Icon_Image != null) Fish_Icon_Image.SetActive(true);
             }
             else if (itemToPickUp.CompareTag("Key"))
             {
                 GameObject door = GameObject.FindWithTag("LockedDoor");
-                if (door != null)
-                {
-                    Destroy(door);
-                }
+                if (door != null) Destroy(door);
+                if (Key_Icon_Image != null) Key_Icon_Image.SetActive(true);
             }
 
             Destroy(itemToPickUp);
