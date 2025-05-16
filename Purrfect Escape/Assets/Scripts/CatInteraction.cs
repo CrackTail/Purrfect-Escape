@@ -1,11 +1,11 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class CatInteraction : MonoBehaviour
 {
     public GameObject dialogueBubble;
     public TextMeshProUGUI dialogueText;
+
     private bool playerInRange = false;
     private bool hasReceivedFish = false;
 
@@ -20,29 +20,25 @@ public class CatInteraction : MonoBehaviour
     void ShowDialogue()
     {
         dialogueBubble.SetActive(true);
-        if (!hasReceivedFish)
-        {
-            dialogueText.text = "Grant me fish and I'll grant you key.";
-        }
-        else
-        {
-            dialogueText.text = "You've already given me fish.";
-        }
+
+        dialogueText.text = hasReceivedFish
+            ? "You've already given me fish."
+            : "Find me some food and I will give you this shinny key";
     }
 
     public void ReceiveFish()
     {
         hasReceivedFish = true;
-        // Here, you'd trigger giving the player the key (see next script)
+        // Trigger giving the player the key here
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
             playerInRange = true;
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -51,4 +47,3 @@ public class CatInteraction : MonoBehaviour
         }
     }
 }
-
