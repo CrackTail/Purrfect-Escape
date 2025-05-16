@@ -3,21 +3,44 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     private FishCounter fishCounter;
-    private GameObject fishToDestroy;
+    private GameObject itemToPickUp;
+
     void Start() => fishCounter = FindAnyObjectByType<FishCounter>();
+
     void Update()
     {
-        if (fishToDestroy && Input.GetKeyDown(KeyCode.E))
+        if (itemToPickUp && Input.GetKeyDown(KeyCode.E))
         {
-            fishCounter.AddFish();
-            Destroy(fishToDestroy);
-            GameObject door = GameObject.FindWithTag("LockedDoor");
-            if (door != null)
+            if (itemToPickUp.CompareTag("Fish"))
             {
-                Destroy(door);
+                fishCounter.AddFish();
             }
+            else if (itemToPickUp.CompareTag("Key"))
+            {
+                GameObject door = GameObject.FindWithTag("LockedDoor");
+                if (door != null)
+                {
+                    Destroy(door);
+                }
+            }
+
+            Destroy(itemToPickUp);
         }
     }
-    void OnTriggerEnter2D(Collider2D other) => fishToDestroy = other.CompareTag("Fish") ? other.gameObject : null;
-    void OnTriggerExit2D(Collider2D other) => fishToDestroy = other.CompareTag("Fish") ? null : fishToDestroy;
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Fish") || other.CompareTag("Key"))
+        {
+            itemToPickUp = other.gameObject;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject == itemToPickUp)
+        {
+            itemToPickUp = null;
+        }
+    }
 }
