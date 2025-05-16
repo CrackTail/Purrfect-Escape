@@ -1,29 +1,19 @@
 using UnityEngine;
 
-public class CatStairsInteraction : MonoBehaviour
+public class CatIconStairsAbove : MonoBehaviour
 {
     public GameObject Icon_Stairs;
-    private bool isNearStairs = false;
-
-    void Update()
-    {
-        if (isNearStairs && Input.GetKeyDown(KeyCode.E))
-        {
-            UseStairs();
-        }
-    }
-
-    void UseStairs()
-    {
-        Debug.Log("Using stairs!");
-    }
+    public GameObject Icon_Hide;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Teleporter"))
         {
-            isNearStairs = true;
             Icon_Stairs.SetActive(true);
+        }
+        if (other.CompareTag("HidingObject"))
+        {
+            Icon_Hide.SetActive(true);
         }
     }
 
@@ -31,8 +21,11 @@ public class CatStairsInteraction : MonoBehaviour
     {
         if (other.CompareTag("Teleporter"))
         {
-            isNearStairs = false;
             Icon_Stairs.SetActive(false);
+        }
+        if (other.CompareTag("HidingObject"))
+        {
+            Icon_Hide.SetActive(false);
         }
     }
 }
