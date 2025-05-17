@@ -1,18 +1,32 @@
 using UnityEngine;
 using TMPro;
 
-public class CatInteraction : MonoBehaviour
+public class CatQuest1 : MonoBehaviour
 {
     public GameObject dialogueBubble;
     public TextMeshProUGUI dialogueText;
+    public GameObject NPCGives;
+    public GameObject NPCTakes;
 
     private bool playerInRange = false;
     private bool hasReceivedFish = false;
+
+    private PlayerInventory inventory;
+
+    void Start()
+    {
+        inventory = FindAnyObjectByType<PlayerInventory>();
+    }
 
     void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
+            if (!hasReceivedFish && inventory.hasFish)
+            {
+                ReceiveFish();
+            }
+
             ShowDialogue();
         }
     }
@@ -22,14 +36,20 @@ public class CatInteraction : MonoBehaviour
         dialogueBubble.SetActive(true);
 
         dialogueText.text = hasReceivedFish
-            ? "You've already given me fish."
-            : "Find me some food and I will give you this shinny key";
+            ? "Now leave me be. I have more important matters to attend to."
+            : "Find me some food and I will give you this shiny key";
     }
 
     public void ReceiveFish()
     {
         hasReceivedFish = true;
-        // Trigger giving the player the key here
+        inventory.hasFish = false;
+
+        if (NPCTakes != null)
+            Destroy(NPCTakes);
+
+        if (NPCGives != null)
+            NPCGives.SetActive(true);
     }
 
     void OnTriggerEnter2D(Collider2D other)
