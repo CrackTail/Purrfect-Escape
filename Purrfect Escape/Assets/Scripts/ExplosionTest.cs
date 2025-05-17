@@ -79,7 +79,7 @@ public class ExplodeOnImpact : MonoBehaviour
         float randomY = Random.Range(0.5f, bounceStrength);
         rb.linearVelocity = new Vector2(randomX, randomY);
 
-        Destroy(piece, 5f);
+        //Destroy(piece, 5f);
     }
 
     void DisablePhysics()
@@ -87,7 +87,7 @@ public class ExplodeOnImpact : MonoBehaviour
         Rigidbody2D[] pieces = Object.FindObjectsByType<Rigidbody2D>(FindObjectsSortMode.None);
         foreach (var piece in pieces)
         {
-            piece.bodyType = RigidbodyType2D.Kinematic;
+            piece.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 }
