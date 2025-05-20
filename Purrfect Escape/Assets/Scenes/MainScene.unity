@@ -8285,7 +8285,7 @@ GameObject:
   - component: {fileID: 694846143}
   - component: {fileID: 694846144}
   m_Layer: 0
-  m_Name: Key_Yellow_Text
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12638,7 +12638,7 @@ GameObject:
   - component: {fileID: 1131508224}
   - component: {fileID: 1131508225}
   m_Layer: 0
-  m_Name: Key_Yellow_Text
+  m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16479,7 +16479,7 @@ GameObject:
   - component: {fileID: 1465917401}
   - component: {fileID: 1465917402}
   m_Layer: 0
-  m_Name: Key_Yellow_Text
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17496,7 +17496,7 @@ GameObject:
   - component: {fileID: 1592490321}
   - component: {fileID: 1592490323}
   m_Layer: 0
-  m_Name: Key_Yellow_Text
+  m_Name: CatPaw big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17512,7 +17512,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.078, y: -0.077, z: 0}
-  m_LocalScale: {x: 0.006, y: 0.006, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 452091359}
@@ -17561,12 +17561,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: -1981981520730204392, guid: 2d7953681ba797249acb73524a4cf5c6, type: 3}
+  m_Sprite: {fileID: -5830951572092177348, guid: baf7977be1f276f4d901cd2d4a6c8855, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.39, y: 3.17}
+  m_Size: {x: 1.55, y: 1.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -19239,7 +19239,7 @@ GameObject:
   - component: {fileID: 1729537236}
   - component: {fileID: 1729537238}
   m_Layer: 0
-  m_Name: Key_Yellow_Text
+  m_Name: CatPaw small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19255,7 +19255,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.1, y: -0.1, z: 0}
-  m_LocalScale: {x: 0.003, y: 0.003, z: 1}
+  m_LocalScale: {x: 0.007, y: 0.007, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 452091359}
@@ -19304,12 +19304,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: -1981981520730204392, guid: 2d7953681ba797249acb73524a4cf5c6, type: 3}
+  m_Sprite: {fileID: -5830951572092177348, guid: baf7977be1f276f4d901cd2d4a6c8855, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.39, y: 3.17}
+  m_Size: {x: 1.55, y: 1.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
