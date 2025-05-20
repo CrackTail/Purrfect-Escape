@@ -3720,10 +3720,10 @@ TextureImporter:
       name: tilemap_all_139
       rect:
         serializedVersion: 2
-        x: 160
-        y: 173
-        width: 64
-        height: 42
+        x: 176
+        y: 176
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5612,10 +5612,10 @@ TextureImporter:
       name: tilemap_all_225
       rect:
         serializedVersion: 2
-        x: 256
-        y: 368
-        width: 48
-        height: 48
+        x: 270
+        y: 381
+        width: 20
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
