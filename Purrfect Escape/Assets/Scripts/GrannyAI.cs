@@ -10,6 +10,7 @@ public class GrannyAI : MonoBehaviour
     private Animator anim;
     [SerializeField] private float InteractionRange = 6f;
     public LayerMask Granny;
+    public GrannyAnger grannyAnger; // Add this near the top
 
     void Start()
     {
@@ -22,7 +23,8 @@ public class GrannyAI : MonoBehaviour
     void Update()
     {
         float moveDirection = currentPoint == pointB.transform ? 1 : -1;
-        rb.linearVelocity = new Vector2(moveDirection * speed, 0);
+        //rb.linearVelocity = new Vector2(moveDirection * speed, 0);
+        rb.linearVelocity = new Vector2(moveDirection * grannyAnger.grannySpeed, 0);
         Collider[] hits = Physics.OverlapSphere(transform.position, InteractionRange, Granny);
 
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f)
