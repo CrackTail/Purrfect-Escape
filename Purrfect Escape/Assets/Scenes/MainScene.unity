@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 60245811}
   - component: {fileID: 60245812}
   - component: {fileID: 60245813}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1335,7 +1335,7 @@ GameObject:
   - component: {fileID: 106901433}
   - component: {fileID: 106901434}
   - component: {fileID: 106901435}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2074,7 +2074,7 @@ GameObject:
   - component: {fileID: 175993347}
   - component: {fileID: 175993346}
   - component: {fileID: 175993348}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: picture2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2210,7 +2210,8 @@ GameObject:
   m_Component:
   - component: {fileID: 192349090}
   - component: {fileID: 192349089}
-  m_Layer: 0
+  - component: {fileID: 192349091}
+  m_Layer: 30
   m_Name: lava lamp
   m_TagString: Breakable
   m_Icon: {fileID: 0}
@@ -2287,6 +2288,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1224703359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &192349091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192349088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &198767697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,7 +2317,7 @@ GameObject:
   - component: {fileID: 198767699}
   - component: {fileID: 198767698}
   - component: {fileID: 198767700}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: calendar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3138,7 +3157,7 @@ GameObject:
   - component: {fileID: 262461692}
   - component: {fileID: 262461691}
   - component: {fileID: 262461693}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: tea cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3592,7 +3611,7 @@ GameObject:
   - component: {fileID: 296152747}
   - component: {fileID: 296152746}
   - component: {fileID: 296152748}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: coffee pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4436,7 +4455,7 @@ GameObject:
   - component: {fileID: 339289805}
   - component: {fileID: 339289804}
   - component: {fileID: 339289806}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: wineglass2
   m_TagString: Breakable
   m_Icon: {fileID: 0}
@@ -5014,7 +5033,7 @@ GameObject:
   - component: {fileID: 384225322}
   - component: {fileID: 384225323}
   - component: {fileID: 384225324}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: wineglass1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5624,7 +5643,7 @@ GameObject:
   - component: {fileID: 415836529}
   - component: {fileID: 415836530}
   - component: {fileID: 415836531}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: 'wineglass1 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5730,7 +5749,7 @@ GameObject:
   - component: {fileID: 416200432}
   - component: {fileID: 416200433}
   - component: {fileID: 416200434}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: vase
   m_TagString: Breakable
   m_Icon: {fileID: 0}
@@ -6133,7 +6152,7 @@ GameObject:
   - component: {fileID: 469542375}
   - component: {fileID: 469542377}
   - component: {fileID: 469542378}
-  m_Layer: 31
+  m_Layer: 30
   m_Name: lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6285,7 +6304,7 @@ GameObject:
   - component: {fileID: 469938458}
   - component: {fileID: 469938459}
   - component: {fileID: 469938460}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: picture3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6556,7 +6575,7 @@ GameObject:
   - component: {fileID: 497494666}
   - component: {fileID: 497494667}
   - component: {fileID: 497494668}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: flowerpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6749,7 +6768,7 @@ GameObject:
   - component: {fileID: 509786351}
   - component: {fileID: 509786350}
   - component: {fileID: 509786352}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: flowerpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7180,7 +7199,7 @@ GameObject:
   - component: {fileID: 531166116}
   - component: {fileID: 531166117}
   - component: {fileID: 531166118}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: candles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8386,7 +8405,8 @@ GameObject:
   m_Component:
   - component: {fileID: 625967952}
   - component: {fileID: 625967951}
-  m_Layer: 0
+  - component: {fileID: 625967953}
+  m_Layer: 30
   m_Name: lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8463,6 +8483,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1452657840}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &625967953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625967950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &631691023
 GameObject:
   m_ObjectHideFlags: 0
@@ -8648,7 +8686,7 @@ GameObject:
   - component: {fileID: 633834743}
   - component: {fileID: 633834744}
   - component: {fileID: 633834745}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: soap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8877,7 +8915,7 @@ GameObject:
   - component: {fileID: 659003691}
   - component: {fileID: 659003692}
   - component: {fileID: 659003693}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: books2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9340,7 +9378,7 @@ GameObject:
   - component: {fileID: 680476919}
   - component: {fileID: 680476920}
   - component: {fileID: 680476921}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: books1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10557,7 +10595,7 @@ GameObject:
   - component: {fileID: 754833072}
   - component: {fileID: 754833071}
   - component: {fileID: 754833073}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10663,7 +10701,7 @@ GameObject:
   - component: {fileID: 761884362}
   - component: {fileID: 761884361}
   - component: {fileID: 761884363}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: green bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10769,7 +10807,7 @@ GameObject:
   - component: {fileID: 762488161}
   - component: {fileID: 762488162}
   - component: {fileID: 762488163}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: iron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11161,7 +11199,7 @@ GameObject:
   - component: {fileID: 779075779}
   - component: {fileID: 779075778}
   - component: {fileID: 779075780}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11385,7 +11423,7 @@ GameObject:
   - component: {fileID: 791059590}
   - component: {fileID: 791059589}
   - component: {fileID: 791059591}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: mixer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11578,7 +11616,7 @@ GameObject:
   - component: {fileID: 819528559}
   - component: {fileID: 819528558}
   - component: {fileID: 819528560}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: napkins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12337,7 +12375,7 @@ GameObject:
   - component: {fileID: 905681785}
   - component: {fileID: 905681784}
   - component: {fileID: 905681786}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: clock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12723,7 +12761,7 @@ GameObject:
   - component: {fileID: 935177274}
   - component: {fileID: 935177275}
   - component: {fileID: 935177276}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: wineglass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12829,7 +12867,7 @@ GameObject:
   - component: {fileID: 938059750}
   - component: {fileID: 938059749}
   - component: {fileID: 938059751}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: flowerpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13510,7 +13548,7 @@ GameObject:
   - component: {fileID: 967056536}
   - component: {fileID: 967056535}
   - component: {fileID: 967056537}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: picture1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14334,7 +14372,7 @@ GameObject:
   - component: {fileID: 1109771238}
   - component: {fileID: 1109771237}
   - component: {fileID: 1109771239}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: storage jars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15182,7 +15220,7 @@ GameObject:
   - component: {fileID: 1177320187}
   - component: {fileID: 1177320186}
   - component: {fileID: 1177320188}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: dishes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15642,7 +15680,7 @@ GameObject:
   - component: {fileID: 1203909286}
   - component: {fileID: 1203909287}
   - component: {fileID: 1203909288}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16106,7 +16144,7 @@ GameObject:
   - component: {fileID: 1249203223}
   - component: {fileID: 1249203222}
   - component: {fileID: 1249203224}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: books1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17881,7 +17919,7 @@ GameObject:
   - component: {fileID: 1405623300}
   - component: {fileID: 1405623301}
   - component: {fileID: 1405623302}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: picture2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18330,7 +18368,7 @@ GameObject:
   - component: {fileID: 1436947751}
   - component: {fileID: 1436947752}
   - component: {fileID: 1436947753}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: green bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18523,7 +18561,7 @@ GameObject:
   - component: {fileID: 1451912446}
   - component: {fileID: 1451912445}
   - component: {fileID: 1451912447}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: flowerpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19174,7 +19212,7 @@ GameObject:
   - component: {fileID: 1491494202}
   - component: {fileID: 1491494201}
   - component: {fileID: 1491494203}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: picture1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19556,7 +19594,7 @@ GameObject:
   - component: {fileID: 1552929277}
   - component: {fileID: 1552929276}
   - component: {fileID: 1552929278}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20237,7 +20275,7 @@ GameObject:
   - component: {fileID: 1588958207}
   - component: {fileID: 1588958208}
   - component: {fileID: 1588958209}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: paint can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20972,7 +21010,7 @@ GameObject:
   - component: {fileID: 1633647885}
   - component: {fileID: 1633647886}
   - component: {fileID: 1633647887}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: shampoo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21511,7 +21549,7 @@ GameObject:
   - component: {fileID: 1660324003}
   - component: {fileID: 1660324002}
   - component: {fileID: 1660324004}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22188,7 +22226,7 @@ GameObject:
   - component: {fileID: 1716806894}
   - component: {fileID: 1716806895}
   - component: {fileID: 1716806896}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: poster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22468,7 +22506,7 @@ GameObject:
   - component: {fileID: 1748694530}
   - component: {fileID: 1748694529}
   - component: {fileID: 1748694531}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22574,7 +22612,7 @@ GameObject:
   - component: {fileID: 1749375135}
   - component: {fileID: 1749375136}
   - component: {fileID: 1749375137}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: flowerpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23262,7 +23300,7 @@ GameObject:
   - component: {fileID: 1774041615}
   - component: {fileID: 1774041614}
   - component: {fileID: 1774041616}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: books2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24503,7 +24541,7 @@ GameObject:
   - component: {fileID: 1900353077}
   - component: {fileID: 1900353078}
   - component: {fileID: 1900353079}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25061,7 +25099,7 @@ GameObject:
   - component: {fileID: 1937518689}
   - component: {fileID: 1937518688}
   - component: {fileID: 1937518690}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: poster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25167,7 +25205,7 @@ GameObject:
   - component: {fileID: 1946790329}
   - component: {fileID: 1946790328}
   - component: {fileID: 1946790330}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: basket with clothes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25569,7 +25607,7 @@ GameObject:
   - component: {fileID: 2015788399}
   - component: {fileID: 2015788398}
   - component: {fileID: 2015788400}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: vase
   m_TagString: Breakable
   m_Icon: {fileID: 0}
@@ -26805,7 +26843,7 @@ GameObject:
   - component: {fileID: 2117799518}
   - component: {fileID: 2117799517}
   - component: {fileID: 2117799519}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: stationery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26911,7 +26949,7 @@ GameObject:
   - component: {fileID: 2119521419}
   - component: {fileID: 2119521420}
   - component: {fileID: 2119521421}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27017,7 +27055,7 @@ GameObject:
   - component: {fileID: 2120458955}
   - component: {fileID: 2120458954}
   - component: {fileID: 2120458956}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: books
   m_TagString: Untagged
   m_Icon: {fileID: 0}
