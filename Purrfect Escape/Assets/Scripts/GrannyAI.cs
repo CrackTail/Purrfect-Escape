@@ -22,7 +22,8 @@ public class GrannyAI : MonoBehaviour
     private int currentFloorIndex = 0;
     private bool justTeleported = false;
     [SerializeField] private float teleportCooldown = 5.0f;
-    
+    private GameObject lastTeleporter = null;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -49,16 +50,17 @@ public class GrannyAI : MonoBehaviour
         {
             foreach (Collider2D hit in hits)
             {
-                if (hit.CompareTag("Teleporter"))
+                if (hit.CompareTag("Teleporter") && hit.gameObject != lastTeleporter)
                 {
                     // 50% chance to teleport
-                    if (Random.value < 0.5f)
+                    if (Random.value < 0.6f)
                     {
                         PlayerTeleporter teleporterScript = FindFirstObjectByType<PlayerTeleporter>();
                         if (teleporterScript != null)
                         {
                             teleporterScript.Interact(gameObject, hit.gameObject);
                             justTeleported = true;
+                            lastTeleporter = hit.gameObject; // Store the last used teleporter
                             Invoke(nameof(ResetTeleportFlag), teleportCooldown);
                             Invoke(nameof(UpdatePatrolFloor), 0.1f);
                             Debug.Log("Granny teleported!");
@@ -68,6 +70,10 @@ public class GrannyAI : MonoBehaviour
                     else
                     {
                         Debug.Log("Granny saw the teleporter but chose not to use it.");
+                        lastTeleporter = hit.gameObject; // Mark it even if not used to avoid re-evaluation
+                        justTeleported = true;
+                        Invoke(nameof(ResetTeleportFlag), teleportCooldown);
+                        break;
                     }
                 }
             }
@@ -162,5 +168,6 @@ public class GrannyAI : MonoBehaviour
     private void ResetTeleportFlag()
     {
         justTeleported = false;
+        lastTeleporter = null;
     }
 }
