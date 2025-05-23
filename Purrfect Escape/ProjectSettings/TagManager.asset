@@ -13,6 +13,7 @@ TagManager:
   - NpcCat
   - Key
   - Ground
+  - Breakable
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - UI
   - Platform
   - 
-  - 
+  - Teleporter
   - InteractibleLayer
   - HidingObject
   - NpcCat

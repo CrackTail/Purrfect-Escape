@@ -9,7 +9,10 @@ public class GrannyAI : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     [SerializeField] private float InteractionRange = 6f;
-    public LayerMask Granny;
+    public LayerMask teleporterLayer;
+    public GrannyAnger grannyAnger; // Add this near the top
+    private bool justTeleported = false;
+    [SerializeField] private float teleportCooldown = 5.0f;
 
     void Start()
     {
@@ -22,8 +25,9 @@ public class GrannyAI : MonoBehaviour
     void Update()
     {
         float moveDirection = currentPoint == pointB.transform ? 1 : -1;
-        rb.linearVelocity = new Vector2(moveDirection * speed, 0);
-        Collider[] hits = Physics.OverlapSphere(transform.position, InteractionRange, Granny);
+        //rb.linearVelocity = new Vector2(moveDirection * speed, 0);
+        rb.linearVelocity = new Vector2(moveDirection * grannyAnger.grannySpeed, 0);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, InteractionRange,teleporterLayer);
 
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f)
         {
@@ -36,12 +40,21 @@ public class GrannyAI : MonoBehaviour
             doorMoved = true;
             pointA.transform.position = new Vector3(newPointAX, pointA.transform.position.y, pointA.transform.position.z);
         }
-        foreach (Collider hit in hits)
+        if (!justTeleported)
         {
-            PlayerTeleporter interactable = hit.GetComponent<PlayerTeleporter>();
-            if (interactable != null)
+            foreach (Collider2D hit in hits)
             {
-                interactable.Interact(gameObject);
+                if (hit.CompareTag("Teleporter"))
+                {
+                    PlayerTeleporter teleporterScript = FindFirstObjectByType<PlayerTeleporter>();
+                    if (teleporterScript != null)
+                    {
+                        teleporterScript.Interact(gameObject, hit.gameObject);
+                        justTeleported = true;
+                        Invoke(nameof(ResetTeleportFlag), teleportCooldown);
+                        break;
+                    }
+                }
             }
         }
     }
@@ -62,5 +75,9 @@ public class GrannyAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, InteractionRange);
+    }
+    private void ResetTeleportFlag()
+    {
+        justTeleported = false;
     }
 }
