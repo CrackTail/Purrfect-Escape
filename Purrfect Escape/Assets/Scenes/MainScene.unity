@@ -796,6 +796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 60245811}
   - component: {fileID: 60245812}
+  - component: {fileID: 60245813}
   m_Layer: 0
   m_Name: lamp
   m_TagString: Untagged
@@ -873,6 +874,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &60245813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60245810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &66271758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,6 +1334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 106901433}
   - component: {fileID: 106901434}
+  - component: {fileID: 106901435}
   m_Layer: 0
   m_Name: lamp
   m_TagString: Untagged
@@ -1392,6 +1412,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &106901435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106901432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &108238474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,6 +2073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 175993347}
   - component: {fileID: 175993346}
+  - component: {fileID: 175993348}
   m_Layer: 0
   m_Name: picture2
   m_TagString: Untagged
@@ -2112,6 +2151,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1224703359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &175993348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175993345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &177775537
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,6 +2297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 198767699}
   - component: {fileID: 198767698}
+  - component: {fileID: 198767700}
   m_Layer: 0
   m_Name: calendar
   m_TagString: Untagged
@@ -2317,6 +2375,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 35636549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &198767700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198767697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &199861615
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,6 +3137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 262461692}
   - component: {fileID: 262461691}
+  - component: {fileID: 262461693}
   m_Layer: 0
   m_Name: tea cup
   m_TagString: Untagged
@@ -3138,6 +3215,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 205738865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &262461693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262461690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &287553199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3496,6 +3591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 296152747}
   - component: {fileID: 296152746}
+  - component: {fileID: 296152748}
   m_Layer: 0
   m_Name: coffee pot
   m_TagString: Untagged
@@ -3573,6 +3669,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 205738865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &296152748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296152745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &297059905
 GameObject:
   m_ObjectHideFlags: 0
@@ -4321,6 +4435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 339289805}
   - component: {fileID: 339289804}
+  - component: {fileID: 339289806}
   m_Layer: 0
   m_Name: wineglass2
   m_TagString: Breakable
@@ -4398,6 +4513,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 205738865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &339289806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339289803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &339622794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4880,6 +5013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 384225322}
   - component: {fileID: 384225323}
+  - component: {fileID: 384225324}
   m_Layer: 0
   m_Name: wineglass1
   m_TagString: Untagged
@@ -4957,6 +5091,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &384225324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384225321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1001 &385030053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5471,6 +5623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 415836529}
   - component: {fileID: 415836530}
+  - component: {fileID: 415836531}
   m_Layer: 0
   m_Name: 'wineglass1 '
   m_TagString: Untagged
@@ -5548,6 +5701,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &415836531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415836528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &416200431
 GameObject:
   m_ObjectHideFlags: 0
@@ -5558,6 +5729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 416200432}
   - component: {fileID: 416200433}
+  - component: {fileID: 416200434}
   m_Layer: 0
   m_Name: vase
   m_TagString: Breakable
@@ -5635,6 +5807,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &416200434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416200431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &422172265
 GameObject:
   m_ObjectHideFlags: 0
@@ -6094,6 +6284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469938458}
   - component: {fileID: 469938459}
+  - component: {fileID: 469938460}
   m_Layer: 0
   m_Name: picture3
   m_TagString: Untagged
@@ -6171,6 +6362,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &469938460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469938457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &482962530
 GameObject:
   m_ObjectHideFlags: 0
@@ -6346,6 +6555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 497494666}
   - component: {fileID: 497494667}
+  - component: {fileID: 497494668}
   m_Layer: 0
   m_Name: flowerpot
   m_TagString: Untagged
@@ -6423,6 +6633,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &497494668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497494665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &506137920
 GameObject:
   m_ObjectHideFlags: 0
@@ -6520,6 +6748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 509786351}
   - component: {fileID: 509786350}
+  - component: {fileID: 509786352}
   m_Layer: 0
   m_Name: flowerpot
   m_TagString: Untagged
@@ -6597,6 +6826,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1452657840}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &509786352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509786349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &510117150
 GameObject:
   m_ObjectHideFlags: 0
@@ -6932,6 +7179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 531166116}
   - component: {fileID: 531166117}
+  - component: {fileID: 531166118}
   m_Layer: 0
   m_Name: candles
   m_TagString: Untagged
@@ -7009,6 +7257,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &531166118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531166115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &540868956
 GameObject:
   m_ObjectHideFlags: 0
@@ -8381,6 +8647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 633834743}
   - component: {fileID: 633834744}
+  - component: {fileID: 633834745}
   m_Layer: 0
   m_Name: soap
   m_TagString: Untagged
@@ -8458,6 +8725,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &633834745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633834742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &647733553
 GameObject:
   m_ObjectHideFlags: 0
@@ -8591,6 +8876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 659003691}
   - component: {fileID: 659003692}
+  - component: {fileID: 659003693}
   m_Layer: 0
   m_Name: books2
   m_TagString: Untagged
@@ -8668,6 +8954,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &659003693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659003690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &662586895
 GameObject:
   m_ObjectHideFlags: 0
@@ -9035,6 +9339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 680476919}
   - component: {fileID: 680476920}
+  - component: {fileID: 680476921}
   m_Layer: 0
   m_Name: books1
   m_TagString: Untagged
@@ -9112,6 +9417,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &680476921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680476918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &684985761
 GameObject:
   m_ObjectHideFlags: 0
@@ -10233,6 +10556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 754833072}
   - component: {fileID: 754833071}
+  - component: {fileID: 754833073}
   m_Layer: 0
   m_Name: picture
   m_TagString: Untagged
@@ -10310,6 +10634,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1656589818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &754833073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754833070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &761884360
 GameObject:
   m_ObjectHideFlags: 0
@@ -10320,6 +10662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 761884362}
   - component: {fileID: 761884361}
+  - component: {fileID: 761884363}
   m_Layer: 0
   m_Name: green bottle
   m_TagString: Untagged
@@ -10397,6 +10740,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1224703359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &761884363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761884360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &762488160
 GameObject:
   m_ObjectHideFlags: 0
@@ -10407,6 +10768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 762488161}
   - component: {fileID: 762488162}
+  - component: {fileID: 762488163}
   m_Layer: 0
   m_Name: iron
   m_TagString: Untagged
@@ -10484,6 +10846,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &762488163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762488160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &769825414
 GameObject:
   m_ObjectHideFlags: 0
@@ -10780,6 +11160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 779075779}
   - component: {fileID: 779075778}
+  - component: {fileID: 779075780}
   m_Layer: 0
   m_Name: lamp
   m_TagString: Untagged
@@ -10857,6 +11238,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1656589818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &779075780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779075777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &781001122
 GameObject:
   m_ObjectHideFlags: 0
@@ -10985,6 +11384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 791059590}
   - component: {fileID: 791059589}
+  - component: {fileID: 791059591}
   m_Layer: 0
   m_Name: mixer
   m_TagString: Untagged
@@ -11062,6 +11462,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 205738865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &791059591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791059588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &800549515
 GameObject:
   m_ObjectHideFlags: 0
@@ -11159,6 +11577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 819528559}
   - component: {fileID: 819528558}
+  - component: {fileID: 819528560}
   m_Layer: 0
   m_Name: napkins
   m_TagString: Untagged
@@ -11236,6 +11655,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 31849321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &819528560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819528557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &823794077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: c90f37dbc0f3b9846936d1ede1ff4150, type: 3}
@@ -11899,6 +12336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 905681785}
   - component: {fileID: 905681784}
+  - component: {fileID: 905681786}
   m_Layer: 0
   m_Name: clock
   m_TagString: Untagged
@@ -11976,6 +12414,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 205738865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &905681786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905681783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &913407674
 GameObject:
   m_ObjectHideFlags: 0
@@ -12073,6 +12529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 917146670}
   - component: {fileID: 917146669}
+  - component: {fileID: 917146671}
   m_Layer: 0
   m_Name: mirror
   m_TagString: Untagged
@@ -12150,6 +12607,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1224703359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917146671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917146668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &917741791
 GameObject:
   m_ObjectHideFlags: 0
@@ -12247,6 +12722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 935177274}
   - component: {fileID: 935177275}
+  - component: {fileID: 935177276}
   m_Layer: 0
   m_Name: wineglass
   m_TagString: Untagged
@@ -12324,6 +12800,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &935177276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935177273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &938059748
 GameObject:
   m_ObjectHideFlags: 0
@@ -12334,6 +12828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 938059750}
   - component: {fileID: 938059749}
+  - component: {fileID: 938059751}
   m_Layer: 0
   m_Name: flowerpot
   m_TagString: Untagged
@@ -12411,6 +12906,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 31849321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &938059751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938059748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &938455791
 GameObject:
   m_ObjectHideFlags: 0
@@ -12996,6 +13509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 967056536}
   - component: {fileID: 967056535}
+  - component: {fileID: 967056537}
   m_Layer: 0
   m_Name: picture1
   m_TagString: Untagged
@@ -13073,6 +13587,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1224703359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &967056537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967056534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &990448988
 GameObject:
   m_ObjectHideFlags: 0
@@ -13801,6 +14333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1109771238}
   - component: {fileID: 1109771237}
+  - component: {fileID: 1109771239}
   m_Layer: 0
   m_Name: storage jars
   m_TagString: Untagged
@@ -13878,6 +14411,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 31849321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1109771239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109771236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1113168469
 GameObject:
   m_ObjectHideFlags: 0
@@ -14630,6 +15181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1177320187}
   - component: {fileID: 1177320186}
+  - component: {fileID: 1177320188}
   m_Layer: 0
   m_Name: dishes
   m_TagString: Untagged
@@ -14707,6 +15259,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 205738865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177320188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177320185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1186219332
 GameObject:
   m_ObjectHideFlags: 0
@@ -15071,6 +15641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203909286}
   - component: {fileID: 1203909287}
+  - component: {fileID: 1203909288}
   m_Layer: 0
   m_Name: mirror
   m_TagString: Untagged
@@ -15148,6 +15719,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1203909288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203909285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1211974860
 GameObject:
   m_ObjectHideFlags: 0
@@ -15516,6 +16105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1249203223}
   - component: {fileID: 1249203222}
+  - component: {fileID: 1249203224}
   m_Layer: 0
   m_Name: books1
   m_TagString: Untagged
@@ -15593,6 +16183,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 31849321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1249203224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249203221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1253986546
 GameObject:
   m_ObjectHideFlags: 0
@@ -17272,6 +17880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1405623300}
   - component: {fileID: 1405623301}
+  - component: {fileID: 1405623302}
   m_Layer: 0
   m_Name: picture2
   m_TagString: Untagged
@@ -17349,6 +17958,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1405623302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405623299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1406082953
 GameObject:
   m_ObjectHideFlags: 0
@@ -17702,6 +18329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1436947751}
   - component: {fileID: 1436947752}
+  - component: {fileID: 1436947753}
   m_Layer: 0
   m_Name: green bottle
   m_TagString: Untagged
@@ -17779,6 +18407,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1436947753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436947750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1450860416
 GameObject:
   m_ObjectHideFlags: 0
@@ -17876,6 +18522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1451912446}
   - component: {fileID: 1451912445}
+  - component: {fileID: 1451912447}
   m_Layer: 0
   m_Name: flowerpot
   m_TagString: Untagged
@@ -17953,6 +18600,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1656589818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1451912447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451912444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1452657839
 GameObject:
   m_ObjectHideFlags: 0
@@ -18508,6 +19173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1491494202}
   - component: {fileID: 1491494201}
+  - component: {fileID: 1491494203}
   m_Layer: 0
   m_Name: picture1
   m_TagString: Untagged
@@ -18585,6 +19251,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 31849321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1491494203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491494200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1499373566
 GameObject:
   m_ObjectHideFlags: 0
@@ -18871,6 +19555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1552929277}
   - component: {fileID: 1552929276}
+  - component: {fileID: 1552929278}
   m_Layer: 0
   m_Name: mirror
   m_TagString: Untagged
@@ -18948,6 +19633,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 31849321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1552929278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552929275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1552967592
 GameObject:
   m_ObjectHideFlags: 0
@@ -19533,6 +20236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1588958207}
   - component: {fileID: 1588958208}
+  - component: {fileID: 1588958209}
   m_Layer: 0
   m_Name: paint can
   m_TagString: Untagged
@@ -19610,6 +20314,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1588958209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588958206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1592490320
 GameObject:
   m_ObjectHideFlags: 0
@@ -20249,6 +20971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1633647885}
   - component: {fileID: 1633647886}
+  - component: {fileID: 1633647887}
   m_Layer: 0
   m_Name: shampoo
   m_TagString: Untagged
@@ -20326,6 +21049,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1633647887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633647884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1639950471
 GameObject:
   m_ObjectHideFlags: 0
@@ -20769,6 +21510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1660324003}
   - component: {fileID: 1660324002}
+  - component: {fileID: 1660324004}
   m_Layer: 0
   m_Name: phone
   m_TagString: Untagged
@@ -20846,6 +21588,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1656589818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1660324004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660324001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1662343813
 GameObject:
   m_ObjectHideFlags: 0
@@ -21427,6 +22187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1716806894}
   - component: {fileID: 1716806895}
+  - component: {fileID: 1716806896}
   m_Layer: 0
   m_Name: poster
   m_TagString: Untagged
@@ -21504,6 +22265,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1716806896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716806893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1720770209
 GameObject:
   m_ObjectHideFlags: 0
@@ -21688,6 +22467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1748694530}
   - component: {fileID: 1748694529}
+  - component: {fileID: 1748694531}
   m_Layer: 0
   m_Name: picture
   m_TagString: Untagged
@@ -21765,6 +22545,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 439731638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1748694531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748694528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1749375134
 GameObject:
   m_ObjectHideFlags: 0
@@ -21775,6 +22573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1749375135}
   - component: {fileID: 1749375136}
+  - component: {fileID: 1749375137}
   m_Layer: 0
   m_Name: flowerpot
   m_TagString: Untagged
@@ -21852,6 +22651,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1749375137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749375134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1750533222
 GameObject:
   m_ObjectHideFlags: 0
@@ -22444,6 +23261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1774041615}
   - component: {fileID: 1774041614}
+  - component: {fileID: 1774041616}
   m_Layer: 0
   m_Name: books2
   m_TagString: Untagged
@@ -22521,6 +23339,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 31849321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1774041616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774041613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1814654475
 GameObject:
   m_ObjectHideFlags: 0
@@ -23666,6 +24502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1900353077}
   - component: {fileID: 1900353078}
+  - component: {fileID: 1900353079}
   m_Layer: 0
   m_Name: picture
   m_TagString: Untagged
@@ -23743,6 +24580,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1900353079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900353076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1904652238
 GameObject:
   m_ObjectHideFlags: 0
@@ -24205,6 +25060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1937518689}
   - component: {fileID: 1937518688}
+  - component: {fileID: 1937518690}
   m_Layer: 0
   m_Name: poster
   m_TagString: Untagged
@@ -24282,6 +25138,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 35636549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1937518690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937518687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1946790327
 GameObject:
   m_ObjectHideFlags: 0
@@ -24292,6 +25166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1946790329}
   - component: {fileID: 1946790328}
+  - component: {fileID: 1946790330}
   m_Layer: 0
   m_Name: basket with clothes
   m_TagString: Untagged
@@ -24369,6 +25244,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 35636549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1946790330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946790327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &1962046958
 GameObject:
   m_ObjectHideFlags: 0
@@ -24675,6 +25568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2015788399}
   - component: {fileID: 2015788398}
+  - component: {fileID: 2015788400}
   m_Layer: 0
   m_Name: vase
   m_TagString: Breakable
@@ -24752,6 +25646,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 205738865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2015788400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015788397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &2022217270
 GameObject:
   m_ObjectHideFlags: 0
@@ -25421,7 +26333,7 @@ Transform:
   m_GameObject: {fileID: 2083172457}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.22200008, y: -0.26039723, z: 0}
+  m_LocalPosition: {x: -0.22200008, y: -0.254, z: 0}
   m_LocalScale: {x: 0.16724274, y: 0.5723934, z: 0.5723934}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25892,6 +26804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2117799518}
   - component: {fileID: 2117799517}
+  - component: {fileID: 2117799519}
   m_Layer: 0
   m_Name: stationery
   m_TagString: Untagged
@@ -25969,6 +26882,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 35636549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2117799519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117799516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &2119521418
 GameObject:
   m_ObjectHideFlags: 0
@@ -25979,6 +26910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2119521419}
   - component: {fileID: 2119521420}
+  - component: {fileID: 2119521421}
   m_Layer: 0
   m_Name: picture
   m_TagString: Untagged
@@ -26056,6 +26988,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2119521421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119521418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &2120458953
 GameObject:
   m_ObjectHideFlags: 0
@@ -26066,6 +27016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2120458955}
   - component: {fileID: 2120458954}
+  - component: {fileID: 2120458956}
   m_Layer: 0
   m_Name: books
   m_TagString: Untagged
@@ -26143,6 +27094,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1224703359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2120458956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120458953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 4
+  gridHeight: 4
+  bounceStrength: 5
+  sidewaysStrength: 1
+  explosionDuration: 1
+  groundTag: Ground
 --- !u!1 &2128570533
 GameObject:
   m_ObjectHideFlags: 0
