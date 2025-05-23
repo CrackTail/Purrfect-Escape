@@ -521,11 +521,12 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1829441026}
   speed: 3
   newPointAX: -25
-  InteractionRange: 6
-  Granny:
+  InteractionRange: 2
+  teleporterLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   grannyAnger: {fileID: 51428626}
+  teleportCooldown: 5
 --- !u!212 &51428622
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -590,7 +591,7 @@ Transform:
   m_GameObject: {fileID: 51428620}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.57, y: 10.18, z: 0}
+  m_LocalPosition: {x: 4.75, y: 10.54, z: 0}
   m_LocalScale: {x: 1.5, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11510,11 +11511,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c9bf0450ebd0baf4a988ea8d2a2842d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.38
+      value: 12.35
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c9bf0450ebd0baf4a988ea8d2a2842d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c9bf0450ebd0baf4a988ea8d2a2842d1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13069,7 +13070,7 @@ GameObject:
   - component: {fileID: 1150096984}
   - component: {fileID: 1150096983}
   - component: {fileID: 1150096982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stairs Down 2
   m_TagString: Teleporter
   m_Icon: {fileID: 0}
@@ -14697,7 +14698,7 @@ GameObject:
   - component: {fileID: 1290306770}
   - component: {fileID: 1290306772}
   - component: {fileID: 1290306771}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Stairs Up 2
   m_TagString: Teleporter
   m_Icon: {fileID: 0}
@@ -20843,7 +20844,7 @@ GameObject:
   - component: {fileID: 1871963685}
   - component: {fileID: 1871963684}
   - component: {fileID: 1871963683}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stairs Down
   m_TagString: Teleporter
   m_Icon: {fileID: 0}
@@ -23421,7 +23422,7 @@ GameObject:
   - component: {fileID: 2111341102}
   - component: {fileID: 2111341101}
   - component: {fileID: 2111341100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stairs Up
   m_TagString: Teleporter
   m_Icon: {fileID: 0}
