@@ -615,7 +615,7 @@ MonoBehaviour:
     pointB: {fileID: 1577673032}
     floorCenter: {fileID: 953840654}
   gameOverPanel: {fileID: 1829441026}
-  speed: 3
+  speed: 5
   newPointAX: -25
   InteractionRange: 2
   teleporterLayer:
@@ -782,7 +782,7 @@ MonoBehaviour:
   anger: 0
   angerLevel: 0
   maxAnger: 100
-  baseSpeed: 10
+  baseSpeed: 5
   speedPerLevel: 0.5
   grannySpeed: 0
   angerBarUI: {fileID: 950901303}
@@ -9486,7 +9486,7 @@ GameObject:
   - component: {fileID: 684985764}
   m_Layer: 0
   m_Name: Floor 0
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
