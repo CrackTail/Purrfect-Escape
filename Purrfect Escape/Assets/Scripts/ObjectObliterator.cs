@@ -9,19 +9,44 @@ public class ExplodeOnImpact : MonoBehaviour
     public float explosionDuration = 1f;
 
     private bool exploded = false;
-    private bool catInRange = false;
+    private bool playerInRange = false;
+    private bool falling = false;
+    private bool interactionTriggered = false;
+
     private SpriteRenderer originalSpriteRenderer;
+    private Rigidbody2D rb;
+    private Collider2D objectCollider;
+
+    [Tooltip("Tag assigned to ground objects.")]
+    public string groundTag = "Ground";
 
     void Start()
     {
         originalSpriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+        }
+
+        rb.gravityScale = 0;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+
+        objectCollider = GetComponent<Collider2D>();
+        if (objectCollider == null)
+        {
+            objectCollider = gameObject.AddComponent<BoxCollider2D>();
+        }
+        objectCollider.isTrigger = true;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !exploded && catInRange)
+        if (playerInRange && !falling && !exploded && !interactionTriggered && Input.GetKeyDown(KeyCode.Q))
         {
-            Explode();
+            interactionTriggered = true;
+            StartFall();
         }
     }
 
@@ -29,7 +54,7 @@ public class ExplodeOnImpact : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            catInRange = true;
+            playerInRange = true;
         }
     }
 
@@ -37,15 +62,42 @@ public class ExplodeOnImpact : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            catInRange = false;
+            playerInRange = false;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log($"Collision with: {collision.gameObject.name}");
+
+        if (falling && !exploded && collision.gameObject.CompareTag(groundTag))
+        {
+            Debug.Log("Ground hit detected, exploding...");
+            Explode();
+        }
+    }
+
+    void StartFall()
+    {
+        falling = true;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.gravityScale = 1;
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
+        if (objectCollider != null)
+        {
+            objectCollider.isTrigger = false;
+        }
+
+        float randomRotation = Random.Range(-5f, 5f);
+        transform.Rotate(0f, 0f, randomRotation);
     }
 
     void Explode()
     {
         exploded = true;
         CreatePieces();
-        gameObject.SetActive(false); // Hide the original object
+        gameObject.SetActive(false);
         Invoke("DisablePhysics", explosionDuration);
     }
 
@@ -113,7 +165,7 @@ public class ExplodeOnImpact : MonoBehaviour
         float randomY = Random.Range(0.5f, bounceStrength);
         rb.linearVelocity = new Vector2(randomX, randomY);
 
-        Destroy(piece, 5f); // Optional: Clean up after 5 seconds
+        Destroy(piece, 5f);
     }
 
     void DisablePhysics()
