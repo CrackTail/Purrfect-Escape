@@ -9,6 +9,7 @@ public class ExplodeOnImpact : MonoBehaviour
     public float explosionDuration = 1f;
 
     private bool exploded = false;
+    private bool catInRange = false;
     private SpriteRenderer originalSpriteRenderer;
 
     void Start()
@@ -18,9 +19,25 @@ public class ExplodeOnImpact : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !exploded)
+        if (Input.GetKeyDown(KeyCode.Q) && !exploded && catInRange)
         {
             Explode();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            catInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            catInRange = false;
         }
     }
 
@@ -28,7 +45,7 @@ public class ExplodeOnImpact : MonoBehaviour
     {
         exploded = true;
         CreatePieces();
-        gameObject.SetActive(false); // Hide the original lamp
+        gameObject.SetActive(false); // Hide the original object
         Invoke("DisablePhysics", explosionDuration);
     }
 
