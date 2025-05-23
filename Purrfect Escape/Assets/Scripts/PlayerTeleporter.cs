@@ -7,15 +7,31 @@ public class PlayerTeleporter : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && currentTeleporter != null)
-            transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
+        {
+            Teleporter teleporter = currentTeleporter.GetComponent<Teleporter>();
+            if (teleporter != null && teleporter.GetDestination() != null)
+            {
+                transform.position = teleporter.GetDestination().position;
+            }
+        }
     }
-    public void Interact(GameObject interactor)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"{interactor.name} interacted with {gameObject.name}");
+        if (collision.CompareTag("Teleporter"))
+            currentTeleporter = collision.gameObject;
     }
-    private void OnTriggerEnter2D(Collider2D collision) =>
-        currentTeleporter = collision.CompareTag("Teleporter") ? collision.gameObject : currentTeleporter;
 
-    private void OnTriggerExit2D(Collider2D collision) =>
-        currentTeleporter = collision.CompareTag("Teleporter") && collision.gameObject == currentTeleporter ? null : currentTeleporter;
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Teleporter") && collision.gameObject == currentTeleporter)
+            currentTeleporter = null;
+    }
+    public void Interact(GameObject interactor, GameObject teleporterObject)
+    {
+        Teleporter teleporter = teleporterObject.GetComponent<Teleporter>();
+        if (teleporter != null && teleporter.GetDestination() != null)
+        {
+            interactor.transform.position = teleporter.GetDestination().position;
+        }
+    }
 }
