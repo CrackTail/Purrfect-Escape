@@ -872,12 +872,12 @@ MonoBehaviour:
   angerLevel: 0
   maxAnger: 100
   baseSpeed: 5
-  speedPerLevel: 0.5
+  speedPerLevel: 1
   grannySpeed: 0
   angerBarUI: {fileID: 950901303}
   angerSprites: []
   grannyImageUI: {fileID: 0}
-  objectsPerAngerLevel: 3
+  objectsPerAngerLevel: 5
 --- !u!1 &52912888
 GameObject:
   m_ObjectHideFlags: 0
@@ -10795,7 +10795,7 @@ Transform:
   m_GameObject: {fileID: 586799034}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.17, y: 3.17, z: 0.020204179}
+  m_LocalPosition: {x: -22.84, y: -0.62, z: 0.020204179}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
