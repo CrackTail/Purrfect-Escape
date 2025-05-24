@@ -3,7 +3,6 @@ using System.Collections;
 
 public class CatMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject GameWin;
     [SerializeField] private float MovementSpeed = 5f;
     [SerializeField] private float JumpForce = 5f;
     [SerializeField] private LayerMask PlatformLayer;
@@ -76,9 +75,6 @@ public class CatMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("HidingObject"))
             CanHide = true;
-
-        if (collision.gameObject.CompareTag("Win"))
-            GameWin.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
