@@ -13563,7 +13563,7 @@ Transform:
   m_GameObject: {fileID: 695688536}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.608, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0.608, y: 0.119, z: 0}
   m_LocalScale: {x: 0.054161336, y: 0.054161336, z: 2.0831282}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17061,7 +17061,7 @@ GameObject:
   - component: {fileID: 831224432}
   - component: {fileID: 831224431}
   m_Layer: 0
-  m_Name: Devil_Eyes
+  m_Name: Angry_Granny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17076,8 +17076,8 @@ Transform:
   m_GameObject: {fileID: 831224429}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.618, y: 0.09, z: 0}
-  m_LocalScale: {x: 0.28444895, y: 0.28444895, z: 10.940344}
+  m_LocalPosition: {x: 0.618, y: 0.131, z: 0}
+  m_LocalScale: {x: 0.10409862, y: 0.10409862, z: 4.003793}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1341751379}
@@ -17143,7 +17143,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 12
-  m_Sprite: {fileID: 6526657291224692591, guid: 5eb9ba18340289541a3f5acaf85ad934, type: 3}
+  m_Sprite: {fileID: 641772368085501283, guid: 66586eada88f31d4694e3011da676f49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17151,7 +17151,7 @@ SpriteRenderer:
   m_Size: {x: 4.16, y: 1.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &839624336
