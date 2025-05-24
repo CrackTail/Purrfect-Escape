@@ -3,11 +3,11 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     private bool _hasFish = false;
-    private bool _hasPendant = false;
+    private bool _hasNecklace = false;
     private bool _hasAnger = false;
     private bool _hasKey = false;
-    private bool _hasPinkKey = false;
-    private bool _hasRustyKey = false;
+    private bool _hasKeyPink = false;
+    private bool _hasKeyRusty = false;
 
     public bool hasFish
     {
@@ -20,14 +20,14 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public bool hasPendant
+    public bool hasNecklace
     {
-        get => _hasPendant;
+        get => _hasNecklace;
         set
         {
-            if (!_hasPendant && value)
-                Debug.Log("Collected Pendant!");
-            _hasPendant = value;
+            if (!_hasNecklace && value)
+                Debug.Log("Collected Necklace!");
+            _hasNecklace = value;
         }
     }
 
@@ -53,25 +53,25 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public bool hasPinkKey
+    public bool hasKeyPink
     {
-        get => _hasPinkKey;
+        get => _hasKeyPink;
         set
         {
-            if (!_hasPinkKey && value)
+            if (!_hasKeyPink && value)
                 Debug.Log("Collected Pink Key!");
-            _hasPinkKey = value;
+            _hasKeyPink = value;
         }
     }
 
     public bool hasRustyKey
     {
-        get => _hasRustyKey;
+        get => _hasKeyRusty;
         set
         {
-            if (!_hasRustyKey && value)
+            if (!_hasKeyRusty && value)
                 Debug.Log("Collected Rusty Key!");
-            _hasRustyKey = value;
+            _hasKeyRusty = value;
         }
     }
 }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class PickUp : MonoBehaviour
 {
@@ -72,18 +71,18 @@ public class PickUp : MonoBehaviour
                 inventory.hasKey = true;
                 break;
             case "PinkKey":
-                inventory.hasPinkKey = true;
+                inventory.hasKeyPink = true;
                 break;
             case "RustyKey":
                 inventory.hasRustyKey = true;
                 break;
-            case "Pendant":
-                inventory.hasPendant = true;
+            case "Necklace":
+                inventory.hasNecklace = true;
                 break;
             case "Anger":
                 inventory.hasAnger = true;
                 break;
-                // Add more cases as needed
+                // Add more tags if needed
         }
     }
 }

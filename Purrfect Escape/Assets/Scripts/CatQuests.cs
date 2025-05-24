@@ -13,7 +13,7 @@ public class CatQuest : MonoBehaviour
     [SerializeField] private float fontSizeBefore = 36f;
     [SerializeField] private float fontSizeAfter = 36f;
 
-    public enum RequiredItem { Fish, Pendant, Anger }
+    public enum RequiredItem { Fish, Necklace, Anger }
     [SerializeField] private RequiredItem requiredItem;
 
     public enum RewardItem { GoldKey, PinkKey, RustyKey }
@@ -64,8 +64,8 @@ public class CatQuest : MonoBehaviour
         {
             case RequiredItem.Fish:
                 return inventory.hasFish;
-            case RequiredItem.Pendant:
-                return inventory.hasPendant;
+            case RequiredItem.Necklace:
+                return inventory.hasNecklace;
             case RequiredItem.Anger:
                 return inventory.hasAnger;
             default:
@@ -83,8 +83,8 @@ public class CatQuest : MonoBehaviour
                 inventory.hasFish = false;
                 Debug.Log("Item taken: Fish");
                 break;
-            case RequiredItem.Pendant:
-                inventory.hasPendant = false;
+            case RequiredItem.Necklace:
+                inventory.hasNecklace = false;
                 Debug.Log("Item taken: Pendant");
                 break;
             case RequiredItem.Anger:

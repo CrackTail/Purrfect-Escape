@@ -380,11 +380,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c90f37dbc0f3b9846936d1ede1ff4150, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.2717686
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c90f37dbc0f3b9846936d1ede1ff4150, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -28.414433
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c90f37dbc0f3b9846936d1ede1ff4150, type: 3}
       propertyPath: m_LocalPosition.z
@@ -663,9 +663,10 @@ GameObject:
   - component: {fileID: 42363464}
   - component: {fileID: 42363466}
   - component: {fileID: 42363465}
+  - component: {fileID: 42363467}
   m_Layer: 0
-  m_Name: Necklace
-  m_TagString: Untagged
+  m_Name: Necklace_Collect
+  m_TagString: Necklace
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -679,7 +680,7 @@ Transform:
   m_GameObject: {fileID: 42363463}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.95, y: -1.61, z: 0.020204179}
+  m_LocalPosition: {x: -16.05, y: 3.26, z: 0.020204179}
   m_LocalScale: {x: 0.1825499, y: 0.1825499, z: 0.39006388}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -757,6 +758,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &42363467
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42363463}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.46, y: 3.75}
+    newSize: {x: 4.16, y: 1.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.46, y: 3.75}
+  m_EdgeRadius: 0
 --- !u!1 &44656696
 GameObject:
   m_ObjectHideFlags: 0
@@ -7701,6 +7748,7 @@ GameObject:
   - component: {fileID: 391016220}
   - component: {fileID: 391016219}
   - component: {fileID: 391016221}
+  - component: {fileID: 391016222}
   m_Layer: 0
   m_Name: Cat_NPC_2
   m_TagString: Untagged
@@ -7819,14 +7867,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBubble: {fileID: 1833169312}
   dialogueText: {fileID: 72572727}
-  NPCGives: {fileID: 1034101192}
-  NPCTakes: {fileID: 0}
+  NPCGives: {fileID: 42363463}
+  NPCTakes: {fileID: 1034101192}
   dialogueBefore: Default request message
   dialogueAfter: Default reward message
   fontSizeBefore: 36
   fontSizeAfter: 36
   requiredItem: 0
   rewardItem: 0
+--- !u!61 &391016222
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391016217}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.26, y: 0.24}
+    newSize: {x: 0.26, y: 0.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.26, y: 0.24}
+  m_EdgeRadius: 0
 --- !u!1 &403416128
 GameObject:
   m_ObjectHideFlags: 0
@@ -19660,9 +19754,10 @@ GameObject:
   - component: {fileID: 1034101193}
   - component: {fileID: 1034101195}
   - component: {fileID: 1034101194}
+  - component: {fileID: 1034101196}
   m_Layer: 0
   m_Name: Key_Pink_Collect
-  m_TagString: Untagged
+  m_TagString: KeyPink
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19755,6 +19850,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1034101196
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034101192}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.39, y: 3.17}
+    newSize: {x: 1.39, y: 3.17}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.39, y: 3.17}
+  m_EdgeRadius: 0
 --- !u!1 &1042673697
 GameObject:
   m_ObjectHideFlags: 0
