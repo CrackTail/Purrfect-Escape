@@ -1,12 +1,19 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PickUp : MonoBehaviour
 {
     private GameObject itemToPickUp;
     private PlayerInventory inventory;
 
-    [SerializeField] private GameObject Fish_Icon_Image;
-    [SerializeField] private GameObject Key_Icon_Image;
+    [System.Serializable]
+    public class ItemData
+    {
+        public string tag;
+        public GameObject iconImage;
+    }
+
+    [SerializeField] private ItemData[] items;
 
     void Start()
     {
@@ -17,38 +24,32 @@ public class PickUp : MonoBehaviour
     {
         if (itemToPickUp && Input.GetKeyDown(KeyCode.E))
         {
-            if (itemToPickUp.CompareTag("Fish"))
+            foreach (var item in items)
             {
-                inventory.hasFish = true;
-                if (Fish_Icon_Image != null)
+                if (itemToPickUp.CompareTag(item.tag))
                 {
-                    Fish_Icon_Image.SetActive(true);
-                    Debug.Log("Fish registered");
+                    RegisterItem(item.tag);
+
+                    if (item.iconImage != null)
+                        item.iconImage.SetActive(true);
+
+                    Debug.Log($"{item.tag} registered");
+                    Destroy(itemToPickUp);
+                    break;
                 }
-                Destroy(itemToPickUp);
-            }
-            else if (itemToPickUp.CompareTag("Key"))
-            {
-                inventory.hasKey = true;
-                if (Key_Icon_Image != null)
-                {
-                    Key_Icon_Image.SetActive(true);
-                    Debug.Log("Key registered");
-                }
-                Destroy(itemToPickUp);
             }
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Fish"))
+        foreach (var item in items)
         {
-            itemToPickUp = other.gameObject;
-        }
-        else if (other.CompareTag("Key"))
-        {
-            itemToPickUp = other.gameObject;
+            if (other.CompareTag(item.tag))
+            {
+                itemToPickUp = other.gameObject;
+                break;
+            }
         }
     }
 
@@ -57,6 +58,32 @@ public class PickUp : MonoBehaviour
         if (other.gameObject == itemToPickUp)
         {
             itemToPickUp = null;
+        }
+    }
+
+    void RegisterItem(string tag)
+    {
+        switch (tag)
+        {
+            case "Fish":
+                inventory.hasFish = true;
+                break;
+            case "Key":
+                inventory.hasKey = true;
+                break;
+            case "PinkKey":
+                inventory.hasPinkKey = true;
+                break;
+            case "RustyKey":
+                inventory.hasRustyKey = true;
+                break;
+            case "Pendant":
+                inventory.hasPendant = true;
+                break;
+            case "Anger":
+                inventory.hasAnger = true;
+                break;
+                // Add more cases as needed
         }
     }
 }
