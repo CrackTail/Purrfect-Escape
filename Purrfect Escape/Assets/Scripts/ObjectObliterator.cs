@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ExplodeOnImpact : MonoBehaviour
 {
@@ -22,8 +22,16 @@ public class ExplodeOnImpact : MonoBehaviour
     [Tooltip("Tag assigned to ground objects.")]
     public string groundTag = "Ground";
 
+    //Sound
+    public AudioClip breakSound; 
+    private AudioSource audioSource;
+
     void Start()
     {
+
+        //Sound
+        audioSource = GetComponent<AudioSource>();
+
         originalSpriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -47,14 +55,31 @@ public class ExplodeOnImpact : MonoBehaviour
         {
             Debug.LogError("No GrannyAnger script found in the scene!");
         }
+
     }
 
     void Update()
     {
+        Debug.Log($"playerInRange: {playerInRange}, falling: {falling}, exploded: {exploded}, triggered: {interactionTriggered}");
+
         if (playerInRange && !falling && !exploded && !interactionTriggered && Input.GetKeyDown(KeyCode.Q))
         {
+            Debug.Log("Q pressed, starting fall!");
             interactionTriggered = true;
             StartFall();
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Debug.Log("Manual sound trigger");
+            if (audioSource != null && breakSound != null)
+            {
+                audioSource.PlayOneShot(breakSound);
+            }
+            else
+            {
+                Debug.LogWarning("AudioSource або BreakSound не підключені!");
+            }
         }
     }
 
@@ -78,12 +103,12 @@ public class ExplodeOnImpact : MonoBehaviour
     {
         Debug.Log($"Collision with: {collision.gameObject.name}");
 
-        if (falling && !exploded && collision.gameObject.CompareTag(groundTag))
+        if (falling && !exploded)
         {
-            Debug.Log("Ground hit detected, exploding...");
+            Debug.Log("Forcing explode on any collision!");
             Explode();
         }
-    }
+}
 
     void StartFall()
     {
@@ -108,6 +133,18 @@ public class ExplodeOnImpact : MonoBehaviour
         if (grannyAnger != null)
         {
             grannyAnger.RegisterObjectDestroyed();
+        }
+
+        Debug.Log("Attempting to play break sound...");
+
+        //Sound
+        if (breakSound != null)
+        {
+            GameObject soundObj = new GameObject("TempSound");
+            AudioSource tempAudio = soundObj.AddComponent<AudioSource>();
+            tempAudio.clip = breakSound;
+            tempAudio.Play();
+            Destroy(soundObj, breakSound.length);
         }
 
         CreatePieces();

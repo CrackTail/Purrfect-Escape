@@ -1408,6 +1408,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &60245814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2437,6 +2438,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &106901436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3382,6 +3384,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &175993349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3536,6 +3539,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &192349092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3658,6 +3662,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &198767701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4020,6 +4025,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &217248637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5079,6 +5085,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!1 &287553199
 GameObject:
   m_ObjectHideFlags: 0
@@ -5623,6 +5630,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &296152749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6794,6 +6802,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &339289807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7491,6 +7500,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &384225325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8319,6 +8329,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &415836532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8441,6 +8452,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &416200435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9208,6 +9220,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!61 &469542378
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9376,6 +9389,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &469938461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9770,6 +9784,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &497494669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10077,6 +10092,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &509786353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10524,6 +10540,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &531166119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12107,6 +12124,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &625967954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12403,6 +12421,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &633834746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12735,6 +12754,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &659003694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13214,6 +13234,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &680476922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14940,6 +14961,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &754833074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14966,6 +14988,7 @@ GameObject:
   - component: {fileID: 761884361}
   - component: {fileID: 761884363}
   - component: {fileID: 761884364}
+  - component: {fileID: 761884365}
   m_Layer: 30
   m_Name: green bottle
   m_TagString: Untagged
@@ -15016,7 +15039,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 11
   m_Sprite: {fileID: 5955203805757374784, guid: b30c7434b17c12f4588ef70d9c31320b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15062,6 +15085,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 8300000, guid: a16324388fadb2b4fa89d54966377cb2, type: 3}
 --- !u!114 &761884364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15076,6 +15100,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineChild: {fileID: 1271213546}
   whiteMaterial: {fileID: 2100000, guid: d8a0359c402cf4c4eb47f992442cd3e5, type: 2}
+--- !u!82 &761884365
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761884360}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a16324388fadb2b4fa89d54966377cb2, type: 3}
+  m_Resource: {fileID: 8300000, guid: a16324388fadb2b4fa89d54966377cb2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &762488160
 GameObject:
   m_ObjectHideFlags: 0
@@ -15184,6 +15305,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &762488164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15593,6 +15715,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &779075781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15920,6 +16043,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &791059592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16817,6 +16941,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &819528561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17784,6 +17909,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &905681787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17993,6 +18119,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &917146672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18387,6 +18514,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &935177277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18509,6 +18637,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &938059752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19204,6 +19333,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &967056538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21149,6 +21279,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1109771240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22585,6 +22716,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1177320189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23061,6 +23193,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1203909289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23616,6 +23749,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1249203225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26517,6 +26651,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1405623303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26982,6 +27117,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1436947754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27191,6 +27327,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1451912448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28059,6 +28196,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1491494204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28718,6 +28856,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1552929279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29589,6 +29728,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1588958210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30335,6 +30475,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1633647888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31063,6 +31204,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1660324005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31887,6 +32029,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1716806897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32096,6 +32239,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1748694532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32218,6 +32362,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1749375138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33010,6 +33155,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1774041617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34667,6 +34813,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1900353080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35513,6 +35660,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1937518691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35635,6 +35783,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &1946790331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36152,6 +36301,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &2015788401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38002,6 +38152,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &2117799520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38124,6 +38275,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &2119521422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38235,7 +38387,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120458953}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d874142578e6e48429a20a58acf7ed6e, type: 3}
   m_Name: 
@@ -38246,6 +38398,7 @@ MonoBehaviour:
   sidewaysStrength: 1
   explosionDuration: 1
   groundTag: Ground
+  breakSound: {fileID: 0}
 --- !u!114 &2120458957
 MonoBehaviour:
   m_ObjectHideFlags: 0
