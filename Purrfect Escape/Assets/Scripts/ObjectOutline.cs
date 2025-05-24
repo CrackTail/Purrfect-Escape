@@ -1,50 +1,35 @@
 using UnityEngine;
 
-public class SimpleOutlineToggle : MonoBehaviour
+public class OutlineEffectController : MonoBehaviour
 {
-    SpriteRenderer mainSR;
-    SpriteRenderer outlineSR;
+    public GameObject outlineChild;
+    public Material whiteMaterial;
 
-    void Start()
+    private SpriteRenderer outlineSpriteRenderer;
+    private Material originalMaterial;
+
+    private void Start()
     {
-        mainSR = GetComponent<SpriteRenderer>();
-        if (mainSR == null)
-        {
-            Debug.LogError("No SpriteRenderer found on this GameObject.");
-            enabled = false;
-            return;
-        }
-
-        GameObject outlineObj = new GameObject("Outline");
-        outlineObj.transform.parent = transform;
-        outlineObj.transform.localPosition = Vector3.zero;
-        outlineObj.transform.localRotation = Quaternion.identity;
-        outlineObj.transform.localScale = Vector3.one * 1.1f;
-
-        outlineSR = outlineObj.AddComponent<SpriteRenderer>();
-        outlineSR.sprite = mainSR.sprite;
-        outlineSR.color = Color.white;
-        outlineSR.sortingOrder = mainSR.sortingOrder - 1;
-        outlineSR.enabled = false;
+        outlineSpriteRenderer = outlineChild.GetComponent<SpriteRenderer>();
+        originalMaterial = outlineSpriteRenderer.material;
+        outlineSpriteRenderer.enabled = false;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"OnTriggerEnter2D with {other.gameObject.name}");
-        if (other.CompareTag("Cat") && outlineSR != null)
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Cat entered trigger — enabling outline");
-            outlineSR.enabled = true;
+            outlineSpriteRenderer.enabled = true;
+            outlineSpriteRenderer.material = whiteMaterial;
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log($"OnTriggerExit2D with {other.gameObject.name}");
-        if (other.CompareTag("Cat") && outlineSR != null)
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Cat exited trigger — disabling outline");
-            outlineSR.enabled = false;
+            outlineSpriteRenderer.enabled = false;
+            outlineSpriteRenderer.material = originalMaterial;
         }
     }
 }

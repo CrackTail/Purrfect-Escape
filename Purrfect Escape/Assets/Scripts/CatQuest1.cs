@@ -36,7 +36,7 @@ public class CatQuest1 : MonoBehaviour
         dialogueBubble.SetActive(true);
 
         dialogueText.text = hasReceivedFish
-            ? "Now leave me be. I have more important matters to attend to."
+            ? "I took this key from the felyne living above me.You should try unlocking him, but don't say you got this from me."
             : "Find me some food and I will give you this shiny key";
     }
 
