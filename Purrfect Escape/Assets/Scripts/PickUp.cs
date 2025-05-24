@@ -70,10 +70,10 @@ public class PickUp : MonoBehaviour
             case "Key":
                 inventory.hasKey = true;
                 break;
-            case "PinkKey":
+            case "KeyPink":
                 inventory.hasKeyPink = true;
                 break;
-            case "RustyKey":
+            case "KeyRusty":  // <-- Fixed tag here to match your object tag exactly
                 inventory.hasRustyKey = true;
                 break;
             case "Necklace":
@@ -82,7 +82,9 @@ public class PickUp : MonoBehaviour
             case "Anger":
                 inventory.hasAnger = true;
                 break;
-                // Add more tags if needed
+            default:
+                Debug.LogWarning($"Unknown item tag '{tag}' passed to RegisterItem");
+                break;
         }
     }
 }

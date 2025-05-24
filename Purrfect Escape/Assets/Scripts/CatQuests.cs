@@ -16,7 +16,7 @@ public class CatQuest : MonoBehaviour
     public enum RequiredItem { Fish, Necklace, Anger }
     [SerializeField] private RequiredItem requiredItem;
 
-    public enum RewardItem { GoldKey, PinkKey, RustyKey }
+    public enum RewardItem { Key, KeyPink, KeyRusty }
     [SerializeField] private RewardItem rewardItem;
 
     private bool playerInRange = false;
@@ -85,7 +85,7 @@ public class CatQuest : MonoBehaviour
                 break;
             case RequiredItem.Necklace:
                 inventory.hasNecklace = false;
-                Debug.Log("Item taken: Pendant");
+                Debug.Log("Item taken: Necklace");
                 break;
             case RequiredItem.Anger:
                 inventory.hasAnger = false;

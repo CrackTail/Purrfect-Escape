@@ -14,8 +14,8 @@ public class PlayerInventory : MonoBehaviour
         get => _hasFish;
         set
         {
-            if (!_hasFish && value)
-                Debug.Log("Collected Fish!");
+            if (_hasFish != value)
+                Debug.Log($"Inventory updated: Fish = {value}");
             _hasFish = value;
         }
     }
@@ -25,8 +25,8 @@ public class PlayerInventory : MonoBehaviour
         get => _hasNecklace;
         set
         {
-            if (!_hasNecklace && value)
-                Debug.Log("Collected Necklace!");
+            if (_hasNecklace != value)
+                Debug.Log($"Inventory updated: Necklace = {value}");
             _hasNecklace = value;
         }
     }
@@ -36,8 +36,8 @@ public class PlayerInventory : MonoBehaviour
         get => _hasAnger;
         set
         {
-            if (!_hasAnger && value)
-                Debug.Log("Collected Anger!");
+            if (_hasAnger != value)
+                Debug.Log($"Inventory updated: Anger = {value}");
             _hasAnger = value;
         }
     }
@@ -47,8 +47,8 @@ public class PlayerInventory : MonoBehaviour
         get => _hasKey;
         set
         {
-            if (!_hasKey && value)
-                Debug.Log("Collected Gold Key!");
+            if (_hasKey != value)
+                Debug.Log($"Inventory updated: Gold Key = {value}");
             _hasKey = value;
         }
     }
@@ -58,8 +58,8 @@ public class PlayerInventory : MonoBehaviour
         get => _hasKeyPink;
         set
         {
-            if (!_hasKeyPink && value)
-                Debug.Log("Collected Pink Key!");
+            if (_hasKeyPink != value)
+                Debug.Log($"Inventory updated: Pink Key = {value}");
             _hasKeyPink = value;
         }
     }
@@ -69,8 +69,8 @@ public class PlayerInventory : MonoBehaviour
         get => _hasKeyRusty;
         set
         {
-            if (!_hasKeyRusty && value)
-                Debug.Log("Collected Rusty Key!");
+            if (_hasKeyRusty != value)
+                Debug.Log($"Inventory updated: Rusty Key = {value}");
             _hasKeyRusty = value;
         }
     }
