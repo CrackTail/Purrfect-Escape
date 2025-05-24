@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class PickUp : MonoBehaviour
 {
@@ -71,19 +70,21 @@ public class PickUp : MonoBehaviour
             case "Key":
                 inventory.hasKey = true;
                 break;
-            case "PinkKey":
-                inventory.hasPinkKey = true;
+            case "KeyPink":
+                inventory.hasKeyPink = true;
                 break;
-            case "RustyKey":
+            case "KeyRusty":  // <-- Fixed tag here to match your object tag exactly
                 inventory.hasRustyKey = true;
                 break;
-            case "Pendant":
-                inventory.hasPendant = true;
+            case "Necklace":
+                inventory.hasNecklace = true;
                 break;
             case "Anger":
                 inventory.hasAnger = true;
                 break;
-                // Add more cases as needed
+            default:
+                Debug.LogWarning($"Unknown item tag '{tag}' passed to RegisterItem");
+                break;
         }
     }
 }

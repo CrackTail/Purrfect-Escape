@@ -15,11 +15,17 @@ public class GrannyAnger : MonoBehaviour
 
     public Sprite[] angerSprites;             // 4 sprites, assigned in Inspector
     public Image grannyImageUI;               // Reference to the UI Image
-    
+
     private int destructionCount = 0; // how many objects have been destroyed
-    public int objectsPerAngerLevel = 3; // you can adjust this in the Inspector
+    public int objectsPerAngerLevel = 3; // adjustable in Inspector
+
+    private PlayerInventory inventory; // reference to player's inventory
+
     void Start()
     {
+        // Find the player's inventory in the scene (assuming one exists)
+        inventory = FindAnyObjectByType<PlayerInventory>();
+
         UpdateGrannySpeed();
         UpdateGrannySprite(); // Optional: show correct face at start
     }
@@ -43,6 +49,20 @@ public class GrannyAnger : MonoBehaviour
             }
 
             Debug.Log($"Granny anger increased! Level: {angerLevel}, Speed: {grannySpeed}");
+
+            // Check if anger level reached max
+            if (angerLevel == 4)
+            {
+                if (inventory != null)
+                {
+                    inventory.hasAnger = true;
+                    Debug.Log("Anger collectible unlocked and added to inventory!");
+                }
+                else
+                {
+                    Debug.LogWarning("PlayerInventory not found, cannot update hasAnger.");
+                }
+            }
         }
         else
         {

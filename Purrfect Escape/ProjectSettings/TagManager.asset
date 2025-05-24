@@ -14,6 +14,10 @@ TagManager:
   - Key
   - Ground
   - Breakable
+  - Necklace
+  - KeyPink
+  - KeyRusty
+  - Anger
   layers:
   - Default
   - TransparentFX
