@@ -2,18 +2,17 @@
 
 public class CatInteraction : MonoBehaviour
 {
-    public GrannyAnger grannyAnger; // Drag this in Inspector!
+    public GrannyAnger grannyAnger;
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Breakable"))
         {
+            Destroy(col.gameObject); // cat breaks the object
+
             if (grannyAnger != null)
             {
-                grannyAnger.IncreaseAnger(20f); // ✅ Increase anger
-            }
-            else
-            {
-                Debug.LogWarning("GrannyAnger reference not set on CatInteraction!");
+                grannyAnger.RegisterObjectDestroyed(); // 🔥 level-based anger
             }
         }
     }

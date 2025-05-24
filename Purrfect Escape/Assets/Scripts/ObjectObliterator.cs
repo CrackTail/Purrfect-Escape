@@ -17,6 +17,8 @@ public class ExplodeOnImpact : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D objectCollider;
 
+    private GrannyAnger grannyAnger;
+
     [Tooltip("Tag assigned to ground objects.")]
     public string groundTag = "Ground";
 
@@ -39,6 +41,12 @@ public class ExplodeOnImpact : MonoBehaviour
             objectCollider = gameObject.AddComponent<BoxCollider2D>();
         }
         objectCollider.isTrigger = true;
+
+       grannyAnger = FindFirstObjectByType<GrannyAnger>();
+        if (grannyAnger == null)
+        {
+            Debug.LogError("No GrannyAnger script found in the scene!");
+        }
     }
 
     void Update()
@@ -96,6 +104,12 @@ public class ExplodeOnImpact : MonoBehaviour
     void Explode()
     {
         exploded = true;
+
+        if (grannyAnger != null)
+        {
+            grannyAnger.RegisterObjectDestroyed();
+        }
+
         CreatePieces();
         gameObject.SetActive(false);
         Invoke("DisablePhysics", explosionDuration);
