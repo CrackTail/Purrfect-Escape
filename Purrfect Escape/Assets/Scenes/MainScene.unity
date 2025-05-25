@@ -2002,6 +2002,37 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &94725696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 94725697}
+  m_Layer: 12
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &94725697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94725696}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1914365449}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &103394814
 GameObject:
   m_ObjectHideFlags: 0
@@ -12942,7 +12973,7 @@ GameObject:
   - component: {fileID: 670263210}
   - component: {fileID: 670263209}
   - component: {fileID: 670263208}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor 1
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -13335,7 +13366,7 @@ GameObject:
   - component: {fileID: 684985763}
   - component: {fileID: 684985762}
   - component: {fileID: 684985764}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor 0
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -30751,7 +30782,7 @@ GameObject:
   - component: {fileID: 1643607086}
   - component: {fileID: 1643607085}
   - component: {fileID: 1643607084}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor 2
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -34689,6 +34720,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rigidbody2D: {fileID: 1896438733}
   JumpForce: 12
+  GroundCheck: {fileID: 94725697}
+  GroundCheckRadius: 0.1
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 1073741832
+  PlatformLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1897642670
 GameObject:
   m_ObjectHideFlags: 0
@@ -35227,6 +35266,7 @@ Transform:
   m_Children:
   - {fileID: 1190095840}
   - {fileID: 1284381117}
+  - {fileID: 94725697}
   m_Father: {fileID: 1097708353}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919779278
