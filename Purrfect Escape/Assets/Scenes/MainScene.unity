@@ -680,7 +680,7 @@ Transform:
   m_GameObject: {fileID: 42363463}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.05, y: 3.02, z: 0.020204179}
+  m_LocalPosition: {x: 8.09, y: 9.52, z: 0.020204179}
   m_LocalScale: {x: 0.1825499, y: 0.1825499, z: 0.39006388}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1008,7 +1008,7 @@ Transform:
   m_GameObject: {fileID: 51428620}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.27, y: 10.54, z: 0}
+  m_LocalPosition: {x: 5.23, y: 10.54, z: 0}
   m_LocalScale: {x: 1.5, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1522,7 +1522,7 @@ GameObject:
   - component: {fileID: 72572728}
   - component: {fileID: 72572727}
   m_Layer: 0
-  m_Name: Cat Text_1
+  m_Name: Cat Text_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,8 +1544,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0029, y: -0.0015}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -0.0029, y: -0.456}
+  m_SizeDelta: {x: 1471.78, y: 2237}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &72572727
 MonoBehaviour:
@@ -1594,8 +1594,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 120
+  m_fontSizeBase: 120
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2235,7 +2235,7 @@ Transform:
   m_GameObject: {fileID: 105160203}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.214, y: 9.162, z: 0.020204179}
+  m_LocalPosition: {x: -17.07, y: 8.74, z: 0.020204179}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8607,10 +8607,12 @@ MonoBehaviour:
   dialogueText: {fileID: 72572727}
   NPCGives: {fileID: 1034101192}
   NPCTakes: {fileID: 42363463}
-  dialogueBefore: Default request message
-  dialogueAfter: Default reward message
-  fontSizeBefore: 36
-  fontSizeAfter: 36
+  dialogueBefore: That old hag has been on my nerves lately, I want you to steal
+    something precious from her. hehehe!
+  dialogueAfter: Good work my thief prodigy, now begone. Use this key to get to my
+    other friend.
+  fontSizeBefore: 100
+  fontSizeAfter: 100
   requiredItem: 1
   rewardItem: 1
 --- !u!61 &391016222
@@ -15012,10 +15014,11 @@ MonoBehaviour:
   dialogueText: {fileID: 1427541886}
   NPCGives: {fileID: 586799034}
   NPCTakes: {fileID: 1499373566}
-  dialogueBefore: Default request message
-  dialogueAfter: Default reward message
-  fontSizeBefore: 36
-  fontSizeAfter: 36
+  dialogueBefore: Seen any food nearby? This place is dreadfull and the neighbor
+    upstairs is noisy...
+  dialogueAfter: Here have this key, my paws are tired of carrying it.
+  fontSizeBefore: 100
+  fontSizeAfter: 120
   requiredItem: 0
   rewardItem: 0
 --- !u!61 &697256616
@@ -21507,7 +21510,7 @@ GameObject:
   - component: {fileID: 1042673700}
   - component: {fileID: 1042673699}
   m_Layer: 0
-  m_Name: Cat Text_1
+  m_Name: Cat Text_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21529,8 +21532,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0029, y: -0.0015}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -0.0029, y: -0.411}
+  m_SizeDelta: {x: 2000, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1042673699
 MonoBehaviour:
@@ -21579,8 +21582,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -21617,7 +21620,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 329.85046, y: 0, z: 271.64423, w: 1442.2979}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -27838,15 +27841,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347d08a7e2027d04d8d26f5facbd579c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBubble: {fileID: 1833169312}
-  dialogueText: {fileID: 72572727}
+  dialogueBubble: {fileID: 1341751378}
+  dialogueText: {fileID: 1042673699}
   NPCGives: {fileID: 105160203}
   NPCTakes: {fileID: 1799414575}
   dialogueBefore: Come back after you made granny angry enough.
   dialogueAfter: I like the place now way more now, here have this, found it in the
     dumpster yesterday.
-  fontSizeBefore: 72
-  fontSizeAfter: 72
+  fontSizeBefore: 90
+  fontSizeAfter: 90
   requiredItem: 2
   rewardItem: 2
 --- !u!61 &1382643671
@@ -28523,8 +28526,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0029, y: -0.0015}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -0.007, y: -0.409}
+  m_SizeDelta: {x: 1000, y: 2100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1427541886
 MonoBehaviour:
@@ -28573,8 +28576,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 120
+  m_fontSizeBase: 120
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -29989,7 +29992,7 @@ Transform:
   m_GameObject: {fileID: 1499373566}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.466032, y: 1.11, z: 0.020204179}
+  m_LocalPosition: {x: 18.39, y: 3.97, z: 0.020204179}
   m_LocalScale: {x: 0.3, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35549,7 +35552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1833169313
 Transform:
   m_ObjectHideFlags: 0

@@ -35,6 +35,8 @@ public class CatQuest : MonoBehaviour
         {
             Debug.Log($"CatQuest found PlayerInventory instance: {inventory.name}");
         }
+        if (dialogueBubble != null)
+            dialogueBubble.SetActive(false);
     }
 
     void Update()
