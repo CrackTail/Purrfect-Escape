@@ -6098,6 +6098,7 @@ MonoBehaviour:
   gameWinPanel: {fileID: 1935991052}
   interactionKey: 101
   interactionRange: 4
+  requiredKey: 3
 --- !u!1 &316190025
 GameObject:
   m_ObjectHideFlags: 0
@@ -6377,6 +6378,7 @@ MonoBehaviour:
   gameWinPanel: {fileID: 1935991052}
   interactionKey: 101
   interactionRange: 5
+  requiredKey: 5
 --- !u!1 &325108158
 GameObject:
   m_ObjectHideFlags: 0
@@ -25366,6 +25368,7 @@ MonoBehaviour:
   gameWinPanel: {fileID: 1935991052}
   interactionKey: 101
   interactionRange: 4
+  requiredKey: 6
 --- !u!61 &1344667141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26517,6 +26520,7 @@ MonoBehaviour:
   gameWinPanel: {fileID: 1935991052}
   interactionKey: 101
   interactionRange: 4
+  requiredKey: 4
 --- !u!61 &1394033111
 BoxCollider2D:
   m_ObjectHideFlags: 0
