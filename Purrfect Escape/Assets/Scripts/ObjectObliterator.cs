@@ -79,7 +79,7 @@ public class ExplodeOnImpact : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("AudioSource або BreakSound не підключені!");
+                Debug.LogWarning("AudioSource or BreakSound are not connected!");
             }
         }
     }
