@@ -61,7 +61,7 @@ public class ExplodeOnImpact : MonoBehaviour
 
     void Update()
     {
-        Debug.Log($"playerInRange: {playerInRange}, falling: {falling}, exploded: {exploded}, triggered: {interactionTriggered}");
+        //Debug.Log($"playerInRange: {playerInRange}, falling: {falling}, exploded: {exploded}, triggered: {interactionTriggered}");
 
         if (playerInRange && !falling && !exploded && !interactionTriggered && Input.GetKeyDown(KeyCode.Q))
         {
