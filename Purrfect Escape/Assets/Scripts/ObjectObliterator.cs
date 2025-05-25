@@ -18,6 +18,7 @@ public class ExplodeOnImpact : MonoBehaviour
     private Collider2D objectCollider;
 
     private GrannyAnger grannyAnger;
+    private bool hasTriggeredAnger = false;
 
     [Tooltip("Tag assigned to ground objects.")]
     public string groundTag = "Ground";
@@ -50,7 +51,7 @@ public class ExplodeOnImpact : MonoBehaviour
         }
         objectCollider.isTrigger = true;
 
-       grannyAnger = FindFirstObjectByType<GrannyAnger>();
+        grannyAnger = FindFirstObjectByType<GrannyAnger>();
         if (grannyAnger == null)
         {
             Debug.LogError("No GrannyAnger script found in the scene!");
@@ -130,9 +131,10 @@ public class ExplodeOnImpact : MonoBehaviour
     {
         exploded = true;
 
-        if (grannyAnger != null)
+        if (!hasTriggeredAnger && grannyAnger != null)
         {
             grannyAnger.RegisterObjectDestroyed();
+            hasTriggeredAnger = true;
         }
 
         Debug.Log("Attempting to play break sound...");
