@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: e0d6dd5e6714d6044a31ac239fe80ae9
+guid: 9045a3a2046e02d44838463c0f08e0a7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3029053241596604970
-    second: ExitSign_3_0
+      213: 7986836714847793029
+    second: Cleaning 1_0
+  - first:
+      213: 3486097391909110566
+    second: Cleaning 1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ExitSign_3_0
+      name: Cleaning 1_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 33
-        width: 71
-        height: 44
+        x: 429
+        y: 214
+        width: 1055
+        height: 590
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6dd83e81024a6f5d0800000000000000
-      internalID: -3029053241596604970
+      spriteID: 58fec831da1f6de60800000000000000
+      internalID: 7986836714847793029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cleaning 1_1
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 720
+        width: 108
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62388299b1b116030800000000000000
+      internalID: 3486097391909110566
       vertices: []
       indices: 
       edges: []
@@ -147,8 +172,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      ExitSign_3_0: -3029053241596604970
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

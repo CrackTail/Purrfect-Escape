@@ -4,6 +4,7 @@ public class CatIconStairsAbove : MonoBehaviour
 {
     public GameObject Icon_Stairs;
     public GameObject Icon_Hide;
+    public GameObject Icon_Cleaning_Key;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,6 +15,10 @@ public class CatIconStairsAbove : MonoBehaviour
         if (other.CompareTag("HidingObject"))
         {
             Icon_Hide.SetActive(true);
+        }
+        if (other.CompareTag("Cleaning"))
+        {
+            Icon_Cleaning_Key.SetActive(true);
         }
     }
 
@@ -26,6 +31,10 @@ public class CatIconStairsAbove : MonoBehaviour
         if (other.CompareTag("HidingObject"))
         {
             Icon_Hide.SetActive(false);
+        }
+        if (other.CompareTag("Cleaning"))
+        {
+            Icon_Cleaning_Key.SetActive(false);
         }
     }
 }

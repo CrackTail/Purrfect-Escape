@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class GrannyAnger : MonoBehaviour
@@ -13,32 +13,32 @@ public class GrannyAnger : MonoBehaviour
 
     public AngerBarUI angerBarUI;
 
-    public Sprite[] angerSprites;             // 4 sprites, assigned in Inspector
-    public Image grannyImageUI;               // Reference to the UI Image
+    public Sprite[] angerSprites;
+    public Image grannyImageUI;
 
-    private int destructionCount = 0; // how many objects have been destroyed
-    public int objectsPerAngerLevel = 3; // adjustable in Inspector
+    private int destructionCount = 0;
+    public int objectsPerAngerLevel = 3;
 
-    private PlayerInventory inventory; // reference to player's inventory
+    private PlayerInventory inventory;
 
     void Start()
     {
-        // Find the player's inventory in the scene (assuming one exists)
         inventory = FindAnyObjectByType<PlayerInventory>();
-
         UpdateGrannySpeed();
-        UpdateGrannySprite(); // Optional: show correct face at start
+        UpdateGrannySprite();
     }
 
     public void RegisterObjectDestroyed()
     {
         destructionCount++;
 
-        if (destructionCount >= objectsPerAngerLevel && angerLevel < 4)
+        int newLevel = Mathf.FloorToInt(destructionCount / objectsPerAngerLevel);
+        newLevel = Mathf.Clamp(newLevel, 0, angerSprites.Length - 1);
+
+        if (newLevel > angerLevel)
         {
-            destructionCount = 0;
-            angerLevel++;
-            anger = (angerLevel / 4f) * maxAnger;
+            angerLevel = newLevel;
+            anger = (angerLevel / (float)(angerSprites.Length - 1)) * maxAnger;
 
             UpdateGrannySpeed();
             UpdateGrannySprite();
@@ -50,8 +50,7 @@ public class GrannyAnger : MonoBehaviour
 
             Debug.Log($"Granny anger increased! Level: {angerLevel}, Speed: {grannySpeed}");
 
-            // Check if anger level reached max
-            if (angerLevel == 4)
+            if (angerLevel == 3)
             {
                 if (inventory != null)
                 {
@@ -66,7 +65,8 @@ public class GrannyAnger : MonoBehaviour
         }
         else
         {
-            Debug.Log($"Object destroyed. {objectsPerAngerLevel - destructionCount} left until next anger level.");
+            int remaining = objectsPerAngerLevel - (destructionCount % objectsPerAngerLevel);
+            Debug.Log($"Object destroyed. {remaining} more until next anger level.");
         }
     }
 
@@ -77,7 +77,7 @@ public class GrannyAnger : MonoBehaviour
 
     void UpdateGrannySprite()
     {
-        if (grannyImageUI != null && angerSprites.Length > angerLevel)
+        if (grannyImageUI != null && angerLevel < angerSprites.Length)
         {
             grannyImageUI.sprite = angerSprites[angerLevel];
         }
