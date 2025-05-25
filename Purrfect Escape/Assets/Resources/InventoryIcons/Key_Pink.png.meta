@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-0_11_0
+      name: Key_Pink
       rect:
         serializedVersion: 2
         x: 170
@@ -121,7 +121,7 @@ TextureImporter:
         width: 139
         height: 317
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d9c4588b2ef72a644bcbb7d5b01e27f7
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pixil-frame-0_11_0: -4555380153592601148
+      Key_Pink: -4555380153592601148
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3,8 +3,11 @@ using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
-    [SerializeField] private Image[] itemSlots = new Image[2];
+    [SerializeField] private Image[] itemSlots = new Image[2];  // Index 0 = Slot 1, Index 1 = Slot 2
     [SerializeField] private Vector2[] slotCoordinates = new Vector2[2];
+
+    private const int SLOT_ONE_INDEX = 0;
+    private const int SLOT_TWO_INDEX = 1;
 
     private bool _hasFish = false;
     private bool _hasNecklace = false;
@@ -17,6 +20,31 @@ public class PlayerInventory : MonoBehaviour
     private bool _hasPurpleKey = false;
     private bool _hasRedKey = false;
 
+    private void Start()
+    {
+        ApplySlotCoordinates();
+    }
+
+    private void ApplySlotCoordinates()
+    {
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            if (itemSlots[i] != null && i < slotCoordinates.Length)
+            {
+                RectTransform rt = itemSlots[i].GetComponent<RectTransform>();
+                if (rt != null)
+                {
+                    rt.anchoredPosition = slotCoordinates[i];
+                    Debug.Log($"Slot {i + 1} positioned at {slotCoordinates[i]}.");
+                }
+                else
+                {
+                    Debug.LogWarning($"itemSlot[{i}] does not have a RectTransform.");
+                }
+            }
+        }
+    }
+
     public bool hasFish
     {
         get => _hasFish;
@@ -24,6 +52,7 @@ public class PlayerInventory : MonoBehaviour
         {
             if (_hasFish != value)
             {
+                Debug.Log($"hasFish changed from {_hasFish} to {value}");
                 _hasFish = value;
                 UpdateInventory("Fish", value);
             }
@@ -37,6 +66,7 @@ public class PlayerInventory : MonoBehaviour
         {
             if (_hasNecklace != value)
             {
+                Debug.Log($"hasNecklace changed from {_hasNecklace} to {value}");
                 _hasNecklace = value;
                 UpdateInventory("Necklace", value);
             }
@@ -50,7 +80,9 @@ public class PlayerInventory : MonoBehaviour
         {
             if (_hasAnger != value)
             {
+                Debug.Log($"hasAnger changed from {_hasAnger} to {value}");
                 _hasAnger = value;
+                UpdateInventory("Anger", value);
             }
         }
     }
@@ -62,6 +94,7 @@ public class PlayerInventory : MonoBehaviour
         {
             if (_hasYellowKey != value)
             {
+                Debug.Log($"hasYellowKey changed from {_hasYellowKey} to {value}");
                 _hasYellowKey = value;
                 UpdateInventory("Key_Yellow", value);
             }
@@ -75,6 +108,7 @@ public class PlayerInventory : MonoBehaviour
         {
             if (_hasPinkKey != value)
             {
+                Debug.Log($"hasPinkKey changed from {_hasPinkKey} to {value}");
                 _hasPinkKey = value;
                 UpdateInventory("Key_Pink", value);
             }
@@ -88,6 +122,7 @@ public class PlayerInventory : MonoBehaviour
         {
             if (_hasRustyKey != value)
             {
+                Debug.Log($"hasRustyKey changed from {_hasRustyKey} to {value}");
                 _hasRustyKey = value;
                 UpdateInventory("Key_Rusty", value);
             }
@@ -101,6 +136,7 @@ public class PlayerInventory : MonoBehaviour
         {
             if (_hasBlueKey != value)
             {
+                Debug.Log($"hasBlueKey changed from {_hasBlueKey} to {value}");
                 _hasBlueKey = value;
                 UpdateInventory("Key_Blue", value);
             }
@@ -114,6 +150,7 @@ public class PlayerInventory : MonoBehaviour
         {
             if (_hasOrangeKey != value)
             {
+                Debug.Log($"hasOrangeKey changed from {_hasOrangeKey} to {value}");
                 _hasOrangeKey = value;
                 UpdateInventory("Key_Orange", value);
             }
@@ -127,6 +164,7 @@ public class PlayerInventory : MonoBehaviour
         {
             if (_hasPurpleKey != value)
             {
+                Debug.Log($"hasPurpleKey changed from {_hasPurpleKey} to {value}");
                 _hasPurpleKey = value;
                 UpdateInventory("Key_Purple", value);
             }
@@ -140,16 +178,18 @@ public class PlayerInventory : MonoBehaviour
         {
             if (_hasRedKey != value)
             {
+                Debug.Log($"hasRedKey changed from {_hasRedKey} to {value}");
                 _hasRedKey = value;
                 UpdateInventory("Key_Red", value);
             }
         }
     }
 
-    private void UpdateInventory(string itemName, bool add)
+    public void UpdateInventory(string itemName, bool add)
     {
         if (add)
         {
+            Debug.Log($"Adding {itemName} to inventory UI.");
             Sprite icon = Resources.Load<Sprite>($"InventoryIcons/{itemName}");
             if (icon == null)
             {
@@ -185,6 +225,9 @@ public class PlayerInventory : MonoBehaviour
                 childImage.enabled = true;
                 childImage.transform.SetAsLastSibling();
                 childImage.gameObject.layer = 2;
+                childImage.rectTransform.anchoredPosition = Vector2.zero;
+
+                Debug.Log($"Item {itemName} added to slot {slotIndex + 1}.");
             }
             else
             {
@@ -193,6 +236,7 @@ public class PlayerInventory : MonoBehaviour
         }
         else
         {
+            Debug.Log($"Removing {itemName} from inventory UI.");
             RemoveItemFromSlot(itemName);
         }
     }
@@ -234,13 +278,15 @@ public class PlayerInventory : MonoBehaviour
         for (int i = 0; i < itemSlots.Length; i++)
         {
             Transform childImageTransform = itemSlots[i].transform.Find($"SlotInventory{i + 1}");
-            if (childImageTransform == null) continue;
+            if (childImageTransform == null)
+                continue;
 
             Image childImage = childImageTransform.GetComponent<Image>();
             if (childImage != null && childImage.sprite != null && childImage.sprite.name == itemName)
             {
                 childImage.sprite = null;
                 childImage.enabled = false;
+                Debug.Log($"Item {itemName} removed from slot {i + 1}.");
                 break;
             }
         }

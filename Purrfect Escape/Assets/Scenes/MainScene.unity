@@ -2221,7 +2221,7 @@ GameObject:
   - component: {fileID: 105160207}
   m_Layer: 0
   m_Name: Key_Rusty_Collect
-  m_TagString: KeyRusty
+  m_TagString: Key_Rusty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11862,7 +11862,7 @@ GameObject:
   - component: {fileID: 586799038}
   m_Layer: 0
   m_Name: Key_Yellow_Collect
-  m_TagString: Key
+  m_TagString: Key_Yellow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15112,7 +15112,7 @@ Transform:
   m_GameObject: {fileID: 730830174}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.25, y: 15.81, z: 0}
+  m_LocalPosition: {x: -11.84, y: 15.81, z: 0}
   m_LocalScale: {x: 38, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20782,7 +20782,7 @@ GameObject:
   - component: {fileID: 1034101196}
   m_Layer: 0
   m_Name: Key_Pink_Collect
-  m_TagString: KeyPink
+  m_TagString: Key_Pink
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35468,13 +35468,13 @@ MonoBehaviour:
   items:
   - tag: Fish
     iconImage: {fileID: 1499373566}
-  - tag: Key
+  - tag: Key_Yellow
     iconImage: {fileID: 586799034}
-  - tag: KeyPink
+  - tag: Key_Pink
     iconImage: {fileID: 1034101192}
   - tag: Necklace
     iconImage: {fileID: 42363463}
-  - tag: KeyRusty
+  - tag: Key_Rusty
     iconImage: {fileID: 105160203}
 --- !u!114 &1896438746
 MonoBehaviour:
@@ -35507,8 +35507,8 @@ MonoBehaviour:
   - {fileID: 720488001}
   - {fileID: 2022217272}
   slotCoordinates:
-  - {x: 631, y: -476}
   - {x: 853, y: -445}
+  - {x: 631, y: -476}
 --- !u!114 &1896438750
 MonoBehaviour:
   m_ObjectHideFlags: 0

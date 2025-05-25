@@ -11,14 +11,15 @@ TagManager:
   - HidingObject
   - Win
   - NpcCat
-  - Key
   - Ground
   - Breakable
   - Necklace
-  - KeyPink
-  - KeyRusty
   - Anger
   - Cleaning
+  - Key
+  - Key_Yellow
+  - Key_Rusty
+  - Key_Pink
   layers:
   - Default
   - TransparentFX

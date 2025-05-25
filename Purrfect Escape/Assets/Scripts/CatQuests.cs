@@ -16,7 +16,7 @@ public class CatQuest : MonoBehaviour
     public enum RequiredItem { Fish, Necklace, Anger }
     [SerializeField] private RequiredItem requiredItem;
 
-    public enum RewardItem { Key, KeyPink, KeyRusty }
+    public enum RewardItem { KeyYellow, KeyPink, KeyRusty }
     [SerializeField] private RewardItem rewardItem;
 
     private bool playerInRange = false;
@@ -27,6 +27,14 @@ public class CatQuest : MonoBehaviour
     void Start()
     {
         inventory = FindAnyObjectByType<PlayerInventory>();
+        if (inventory == null)
+        {
+            Debug.LogError("PlayerInventory not found by CatQuest!");
+        }
+        else
+        {
+            Debug.Log($"CatQuest found PlayerInventory instance: {inventory.name}");
+        }
     }
 
     void Update()
@@ -75,6 +83,9 @@ public class CatQuest : MonoBehaviour
 
     void ReceiveItem()
     {
+        Debug.Log($"Before removing item, inventory state:");
+        Debug.Log($"Fish: {inventory.hasFish}, Necklace: {inventory.hasNecklace}, Anger: {inventory.hasAnger}");
+
         hasReceivedItem = true;
 
         switch (requiredItem)
@@ -92,6 +103,12 @@ public class CatQuest : MonoBehaviour
                 Debug.Log("Item taken: Anger");
                 break;
         }
+
+        Debug.Log($"After removing item, inventory state:");
+        Debug.Log($"Fish: {inventory.hasFish}, Necklace: {inventory.hasNecklace}, Anger: {inventory.hasAnger}");
+
+        // Optionally force update UI for testing:
+        inventory.UpdateInventory(requiredItem.ToString(), false);
 
         if (NPCTakes != null)
             Destroy(NPCTakes);
