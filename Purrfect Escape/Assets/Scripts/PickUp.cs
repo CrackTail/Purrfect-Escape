@@ -28,11 +28,8 @@ public class PickUp : MonoBehaviour
                 if (itemToPickUp.CompareTag(item.tag))
                 {
                     RegisterItem(item.tag);
-
                     if (item.iconImage != null)
                         item.iconImage.SetActive(true);
-
-                    Debug.Log($"{item.tag} registered");
                     Destroy(itemToPickUp);
                     break;
                 }
@@ -67,23 +64,32 @@ public class PickUp : MonoBehaviour
             case "Fish":
                 inventory.hasFish = true;
                 break;
-            case "Key":
-                inventory.hasKey = true;
+            case "Key_Yellow":
+                inventory.hasYellowKey = true;
                 break;
-            case "KeyPink":
-                inventory.hasKeyPink = true;
+            case "Key_Pink":
+                inventory.hasPinkKey = true;
                 break;
-            case "KeyRusty":  // <-- Fixed tag here to match your object tag exactly
+            case "Key_Rusty":
                 inventory.hasRustyKey = true;
+                break;
+            case "Key_Blue":
+                inventory.hasBlueKey = true;
+                break;
+            case "Key_Orange":
+                inventory.hasOrangeKey = true;
+                break;
+            case "Key_Purple":
+                inventory.hasPurpleKey = true;
+                break;
+            case "Key_Red":
+                inventory.hasRedKey = true;
                 break;
             case "Necklace":
                 inventory.hasNecklace = true;
                 break;
             case "Anger":
                 inventory.hasAnger = true;
-                break;
-            default:
-                Debug.LogWarning($"Unknown item tag '{tag}' passed to RegisterItem");
                 break;
         }
     }

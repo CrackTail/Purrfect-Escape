@@ -1,13 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
+    [SerializeField] private Image[] itemSlots = new Image[2];
+    [SerializeField] private Vector2[] slotCoordinates = new Vector2[2];
+
     private bool _hasFish = false;
     private bool _hasNecklace = false;
     private bool _hasAnger = false;
-    private bool _hasKey = false;
-    private bool _hasKeyPink = false;
-    private bool _hasKeyRusty = false;
+    private bool _hasYellowKey = false;
+    private bool _hasPinkKey = false;
+    private bool _hasRustyKey = false;
     private bool _hasBlueKey = false;
     private bool _hasOrangeKey = false;
     private bool _hasPurpleKey = false;
@@ -19,8 +23,10 @@ public class PlayerInventory : MonoBehaviour
         set
         {
             if (_hasFish != value)
-                Debug.Log($"Inventory updated: Fish = {value}");
-            _hasFish = value;
+            {
+                _hasFish = value;
+                UpdateInventory("Fish", value);
+            }
         }
     }
 
@@ -30,8 +36,10 @@ public class PlayerInventory : MonoBehaviour
         set
         {
             if (_hasNecklace != value)
-                Debug.Log($"Inventory updated: Necklace = {value}");
-            _hasNecklace = value;
+            {
+                _hasNecklace = value;
+                UpdateInventory("Necklace", value);
+            }
         }
     }
 
@@ -41,51 +49,61 @@ public class PlayerInventory : MonoBehaviour
         set
         {
             if (_hasAnger != value)
-                Debug.Log($"Inventory updated: Anger = {value}");
-            _hasAnger = value;
+            {
+                _hasAnger = value;
+            }
         }
     }
 
-    public bool hasKey
+    public bool hasYellowKey
     {
-        get => _hasKey;
+        get => _hasYellowKey;
         set
         {
-            if (_hasKey != value)
-                Debug.Log($"Inventory updated: Gold Key = {value}");
-            _hasKey = value;
+            if (_hasYellowKey != value)
+            {
+                _hasYellowKey = value;
+                UpdateInventory("Key_Yellow", value);
+            }
         }
     }
 
-    public bool hasKeyPink
+    public bool hasPinkKey
     {
-        get => _hasKeyPink;
+        get => _hasPinkKey;
         set
         {
-            if (_hasKeyPink != value)
-                Debug.Log($"Inventory updated: Pink Key = {value}");
-            _hasKeyPink = value;
+            if (_hasPinkKey != value)
+            {
+                _hasPinkKey = value;
+                UpdateInventory("Key_Pink", value);
+            }
         }
     }
 
     public bool hasRustyKey
     {
-        get => _hasKeyRusty;
+        get => _hasRustyKey;
         set
         {
-            if (_hasKeyRusty != value)
-                Debug.Log($"Inventory updated: Rusty Key = {value}");
-            _hasKeyRusty = value;
+            if (_hasRustyKey != value)
+            {
+                _hasRustyKey = value;
+                UpdateInventory("Key_Rusty", value);
+            }
         }
     }
+
     public bool hasBlueKey
     {
         get => _hasBlueKey;
         set
         {
-            if (!_hasBlueKey && value)
-                Debug.Log("Collected Blue Key!");
-            _hasBlueKey = value;
+            if (_hasBlueKey != value)
+            {
+                _hasBlueKey = value;
+                UpdateInventory("Key_Blue", value);
+            }
         }
     }
 
@@ -94,9 +112,11 @@ public class PlayerInventory : MonoBehaviour
         get => _hasOrangeKey;
         set
         {
-            if (!_hasOrangeKey && value)
-                Debug.Log("Collected Orange Key!");
-            _hasOrangeKey = value;
+            if (_hasOrangeKey != value)
+            {
+                _hasOrangeKey = value;
+                UpdateInventory("Key_Orange", value);
+            }
         }
     }
 
@@ -105,9 +125,11 @@ public class PlayerInventory : MonoBehaviour
         get => _hasPurpleKey;
         set
         {
-            if (!_hasPurpleKey && value)
-                Debug.Log("Collected Purple Key!");
-            _hasPurpleKey = value;
+            if (_hasPurpleKey != value)
+            {
+                _hasPurpleKey = value;
+                UpdateInventory("Key_Purple", value);
+            }
         }
     }
 
@@ -116,9 +138,111 @@ public class PlayerInventory : MonoBehaviour
         get => _hasRedKey;
         set
         {
-            if (!_hasRedKey && value)
-                Debug.Log("Collected Red Key!");
-            _hasRedKey = value;
+            if (_hasRedKey != value)
+            {
+                _hasRedKey = value;
+                UpdateInventory("Key_Red", value);
+            }
+        }
+    }
+
+    private void UpdateInventory(string itemName, bool add)
+    {
+        if (add)
+        {
+            Sprite icon = Resources.Load<Sprite>($"InventoryIcons/{itemName}");
+            if (icon == null)
+            {
+                Debug.LogWarning($"Icon '{itemName}' not found in Resources/InventoryIcons/");
+                return;
+            }
+
+            int slotIndex = GetAvailableSlotIndex();
+            if (slotIndex == -1)
+            {
+                Debug.Log("No available inventory slots to add item: " + itemName);
+                return;
+            }
+
+            Image parentSlot = itemSlots[slotIndex];
+            if (parentSlot == null)
+            {
+                Debug.LogWarning($"Parent slot {slotIndex + 1} is null.");
+                return;
+            }
+
+            Transform childImageTransform = parentSlot.transform.Find($"SlotInventory{slotIndex + 1}");
+            if (childImageTransform == null)
+            {
+                Debug.LogWarning($"Child image SlotInventory{slotIndex + 1} not found!");
+                return;
+            }
+
+            Image childImage = childImageTransform.GetComponent<Image>();
+            if (childImage != null)
+            {
+                childImage.sprite = icon;
+                childImage.enabled = true;
+                childImage.transform.SetAsLastSibling();
+                childImage.gameObject.layer = 2;
+            }
+            else
+            {
+                Debug.LogWarning($"Child image SlotInventory{slotIndex + 1} does not have an Image component!");
+            }
+        }
+        else
+        {
+            RemoveItemFromSlot(itemName);
+        }
+    }
+
+    private int GetAvailableSlotIndex()
+    {
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            Transform childImageTransform = itemSlots[i].transform.Find($"SlotInventory{i + 1}");
+            if (childImageTransform == null)
+            {
+                Debug.Log($"SlotInventory{i + 1} not found.");
+                continue;
+            }
+
+            Image childImage = childImageTransform.GetComponent<Image>();
+            if (childImage == null)
+            {
+                Debug.Log($"SlotInventory{i + 1} has no Image component.");
+                continue;
+            }
+
+            if (childImage.sprite == null)
+            {
+                Debug.Log($"Slot {i + 1} is free.");
+                return i;
+            }
+            else
+            {
+                Debug.Log($"Slot {i + 1} is occupied by {childImage.sprite.name}.");
+            }
+        }
+
+        return -1;
+    }
+
+    private void RemoveItemFromSlot(string itemName)
+    {
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            Transform childImageTransform = itemSlots[i].transform.Find($"SlotInventory{i + 1}");
+            if (childImageTransform == null) continue;
+
+            Image childImage = childImageTransform.GetComponent<Image>();
+            if (childImage != null && childImage.sprite != null && childImage.sprite.name == itemName)
+            {
+                childImage.sprite = null;
+                childImage.enabled = false;
+                break;
+            }
         }
     }
 }
