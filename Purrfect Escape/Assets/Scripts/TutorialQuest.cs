@@ -5,36 +5,14 @@ public class TutorialQuest : MonoBehaviour
 {
     public GameObject dialogueBubble;
     public TextMeshProUGUI dialogueText;
-    public GameObject NPCGives;
-    public GameObject NPCTakes;
 
-    [SerializeField] private string dialogueBefore = "Default request message";
-    [SerializeField] private string dialogueAfter = "Default reward message";
-    [SerializeField] private float fontSizeBefore = 36f;
-    [SerializeField] private float fontSizeAfter = 36f;
-
-    public enum RequiredItem { Fish, Necklace, Anger }
-    [SerializeField] private RequiredItem requiredItem;
-
-    public enum RewardItem { KeyYellow, KeyPink, KeyRusty }
-    [SerializeField] private RewardItem rewardItem;
+    [SerializeField] private string[] dialogueLines;
+    private int currentLineIndex = 0;
 
     private bool playerInRange = false;
-    private bool hasReceivedItem = false;
-
-    private PlayerInventory inventory;
 
     void Start()
     {
-        inventory = FindAnyObjectByType<PlayerInventory>();
-        if (inventory == null)
-        {
-            Debug.LogError("PlayerInventory not found by CatQuest!");
-        }
-        else
-        {
-            Debug.Log($"CatQuest found PlayerInventory instance: {inventory.name}");
-        }
         if (dialogueBubble != null)
             dialogueBubble.SetActive(false);
     }
@@ -43,80 +21,18 @@ public class TutorialQuest : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            if (!hasReceivedItem && HasRequiredItem())
-            {
-                ReceiveItem();
-            }
-
-            ShowDialogue();
+            ShowNextDialogueLine();
         }
     }
 
-    void ShowDialogue()
+    void ShowNextDialogueLine()
     {
+        if (dialogueLines.Length == 0) return;
+
         dialogueBubble.SetActive(true);
+        dialogueText.text = dialogueLines[currentLineIndex];
 
-        if (hasReceivedItem)
-        {
-            dialogueText.text = dialogueAfter;
-            dialogueText.fontSize = fontSizeAfter;
-        }
-        else
-        {
-            dialogueText.text = dialogueBefore;
-            dialogueText.fontSize = fontSizeBefore;
-        }
-    }
-
-    bool HasRequiredItem()
-    {
-        switch (requiredItem)
-        {
-            case RequiredItem.Fish:
-                return inventory.hasFish;
-            case RequiredItem.Necklace:
-                return inventory.hasNecklace;
-            case RequiredItem.Anger:
-                return inventory.hasAnger;
-            default:
-                return false;
-        }
-    }
-
-    void ReceiveItem()
-    {
-        Debug.Log($"Before removing item, inventory state:");
-        Debug.Log($"Fish: {inventory.hasFish}, Necklace: {inventory.hasNecklace}, Anger: {inventory.hasAnger}");
-
-        hasReceivedItem = true;
-
-        switch (requiredItem)
-        {
-            case RequiredItem.Fish:
-                inventory.hasFish = false;
-                Debug.Log("Item taken: Fish");
-                break;
-            case RequiredItem.Necklace:
-                inventory.hasNecklace = false;
-                Debug.Log("Item taken: Necklace");
-                break;
-            case RequiredItem.Anger:
-                inventory.hasAnger = false;
-                Debug.Log("Item taken: Anger");
-                break;
-        }
-
-        Debug.Log($"After removing item, inventory state:");
-        Debug.Log($"Fish: {inventory.hasFish}, Necklace: {inventory.hasNecklace}, Anger: {inventory.hasAnger}");
-
-        // Optionally force update UI for testing:
-        inventory.UpdateInventory(requiredItem.ToString(), false);
-
-        if (NPCTakes != null)
-            Destroy(NPCTakes);
-
-        if (NPCGives != null)
-            NPCGives.SetActive(true); // NPCGives should be the item to spawn in the scene
+        currentLineIndex = (currentLineIndex + 1) % dialogueLines.Length; 
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -131,6 +47,7 @@ public class TutorialQuest : MonoBehaviour
         {
             playerInRange = false;
             dialogueBubble.SetActive(false);
+            currentLineIndex = 0;
         }
     }
 }
