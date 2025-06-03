@@ -209,7 +209,7 @@ public class ExplodeOnImpact : MonoBehaviour
         float randomY = Random.Range(0.5f, bounceStrength);
         rb.linearVelocity = new Vector2(randomX, randomY);
 
-        Destroy(piece, 8f);
+        Destroy(piece, 7f);
     }
 
     void DisablePhysics()
