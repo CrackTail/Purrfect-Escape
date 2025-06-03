@@ -20,6 +20,7 @@ TagManager:
   - Key_Yellow
   - Key_Rusty
   - Key_Pink
+  - Piano
   layers:
   - Default
   - TransparentFX

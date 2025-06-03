@@ -1008,7 +1008,7 @@ Transform:
   m_GameObject: {fileID: 51428620}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.32, y: 10.01, z: 0}
+  m_LocalPosition: {x: -26, y: 10.01, z: 0}
   m_LocalScale: {x: 1.5, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2108,8 +2108,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.8962264, g: 0.25220957, b: 0.2325116, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -2761,8 +2761,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.8962264, g: 0.25220957, b: 0.2325116, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -3292,8 +3292,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.8784314, g: 0.85490197, b: 0.7254902, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -3638,8 +3638,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.9245283, g: 0.7594523, b: 0.75444996, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -5514,9 +5514,11 @@ GameObject:
   - component: {fileID: 233921834}
   - component: {fileID: 233921837}
   - component: {fileID: 233921836}
+  - component: {fileID: 233921839}
+  - component: {fileID: 233921838}
   m_Layer: 6
-  m_Name: Platform_20
-  m_TagString: Untagged
+  m_Name: Platform_20(PianoTrigger)
+  m_TagString: Piano
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5669,6 +5671,127 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &233921838
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233921832}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8514065435707703333, guid: e5b38d106b7bab9439e8d8e92b0c12fb, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.463
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &233921839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233921832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 371fe1b0ee7b8484d87d4e5d3c2fc0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleSounds:
+  - {fileID: 8300000, guid: 55df7e694d5ef9241a5cf938bf898368, type: 3}
+  - {fileID: 8300000, guid: 6f8f0bc2d1910d746b50ea5e0bcc7807, type: 3}
+  - {fileID: 8300000, guid: d6e359e3b29fc0c46b8730a50b975ee5, type: 3}
+  - {fileID: 8300000, guid: 5751d65bedb5c4b49ba80d4cfa5a8182, type: 3}
+  - {fileID: 8300000, guid: fbfced253e751af4e844a3fc1011ed63, type: 3}
+  movementSounds:
+  - {fileID: 8300000, guid: 99df64f330028fd48beb1cf8ff43085b, type: 3}
+  audioSource: {fileID: 233921838}
+  idleLoopStart: 0.52
+  idleLoopEnd: 10
+  fadeOutDuration: 1
 --- !u!1 &244804928
 GameObject:
   m_ObjectHideFlags: 0
@@ -10385,8 +10508,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.9150943, g: 0.82136464, b: 0.33236915, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -13546,11 +13669,11 @@ Transform:
   m_GameObject: {fileID: 585870613}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.889, y: -3.879, z: 0}
-  m_LocalScale: {x: 0.43, y: 0.1, z: 1}
+  m_LocalPosition: {x: -31.116436, y: 34.150005, z: 0}
+  m_LocalScale: {x: 0.58904105, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1113168470}
+  m_Father: {fileID: 1962285649}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &585870615
 MonoBehaviour:
@@ -13965,8 +14088,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.9528302, g: 0.6814502, b: 0.13034001, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -16872,14 +16995,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720487999}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00039966404}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1148579668}
   m_Father: {fileID: 1128742508}
-  m_LocalEulerAnglesHint: {x: 0, y: 179.954, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 853, y: -445}
@@ -22506,11 +22629,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c9bf0450ebd0baf4a988ea8d2a2842d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.35
+      value: -21.55
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c9bf0450ebd0baf4a988ea8d2a2842d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.83
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c9bf0450ebd0baf4a988ea8d2a2842d1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23059,8 +23182,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.9150943, g: 0.82136464, b: 0.33236915, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -25310,7 +25433,6 @@ Transform:
   - {fileID: 1026420496}
   - {fileID: 194919827}
   - {fileID: 1242799049}
-  - {fileID: 585870614}
   - {fileID: 758411891}
   - {fileID: 1546701420}
   - {fileID: 769664421}
@@ -26057,6 +26179,7 @@ GameObject:
   - component: {fileID: 1148579668}
   - component: {fileID: 1148579670}
   - component: {fileID: 1148579669}
+  - component: {fileID: 1148579671}
   m_Layer: 5
   m_Name: SlotInventory1
   m_TagString: Untagged
@@ -26071,16 +26194,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148579667}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00039966404}
-  m_LocalPosition: {x: 0, y: 0, z: -0.17745084}
-  m_LocalScale: {x: 0.9333329, y: 1, z: 1}
+  m_LocalRotation: {x: -0.4047245, y: -0.91443855, z: 0.0001617539, w: 0.000365468}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 720488000}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -179.954, z: 47.748}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 148.00002, y: -15.5}
+  m_AnchoredPosition: {x: 123.2, y: 6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1148579669
@@ -26121,6 +26244,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148579667}
   m_CullTransparentMesh: 1
+--- !u!114 &1148579671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148579667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040b2721b7764d04ab3d762732a5c85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 50
+  floatSpeed: 1
+  floatHeight: 0.5
+  startDelayMin: 0
+  startDelayMax: 1
 --- !u!1 &1150096980
 GameObject:
   m_ObjectHideFlags: 0
@@ -31590,8 +31730,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.9528302, g: 0.6814502, b: 0.13034001, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -34708,8 +34848,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.8773585, g: 0.8525276, b: 0.7242346, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -34823,8 +34963,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.6, g: 0.90196085, b: 0.37254903, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -35571,8 +35711,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.8784314, g: 0.85490197, b: 0.7254902, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -41197,6 +41337,7 @@ GameObject:
   - component: {fileID: 1945549258}
   - component: {fileID: 1945549260}
   - component: {fileID: 1945549259}
+  - component: {fileID: 1945549261}
   m_Layer: 5
   m_Name: SlotInventory2
   m_TagString: Untagged
@@ -41211,16 +41352,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945549257}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.32477316, w: 0.94579196}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2022217271}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.904}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 135.2, y: 31.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1945549259
@@ -41261,6 +41402,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945549257}
   m_CullTransparentMesh: 1
+--- !u!114 &1945549261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945549257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040b2721b7764d04ab3d762732a5c85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 50
+  floatSpeed: 1
+  floatHeight: 0.5
+  startDelayMin: 0
+  startDelayMax: 1
 --- !u!1 &1946790327
 GameObject:
   m_ObjectHideFlags: 0
@@ -41503,7 +41661,8 @@ Transform:
   m_LocalPosition: {x: 6.826, y: -7.294, z: 0}
   m_LocalScale: {x: 0.73, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 585870614}
   m_Father: {fileID: 1113168470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &1962285650
@@ -41689,8 +41848,8 @@ MonoBehaviour:
   m_FalloffIntensity: 0.621
   m_Color: {r: 0.9150943, g: 0.82136464, b: 0.33236915, a: 1}
   m_Intensity: 6
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensity: 0.006
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: -1423831702971740928, guid: 5ef2c7be3781d3c47bdce048fa83bd07, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
