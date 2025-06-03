@@ -15,8 +15,8 @@ public class PianoTrigger : MonoBehaviour
     public float fadeOutDuration = 0.5f;
 
     private bool isPlayerOnPlatform;
-    private Rigidbody2D playerRb;
-    private bool wasMoving;
+    private Transform playerTransform;
+    private float lastXPosition;
     private AudioClip currentClip;
 
     private bool isIdleLooping;
@@ -27,28 +27,11 @@ public class PianoTrigger : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            playerRb = collision.collider.GetComponent<Rigidbody2D>();
+            playerTransform = collision.collider.transform;
+            lastXPosition = playerTransform.position.x;
             isPlayerOnPlatform = true;
             PlayIdleSound();
         }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (!isPlayerOnPlatform || playerRb == null) return;
-
-        bool isMoving = playerRb.linearVelocity.magnitude > 0.01f;
-
-        if (isMoving && !wasMoving)
-        {
-            PlayMovementSound();
-        }
-        else if (!isMoving && wasMoving)
-        {
-            PlayIdleSound();
-        }
-
-        wasMoving = isMoving;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -56,8 +39,7 @@ public class PianoTrigger : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             isPlayerOnPlatform = false;
-            playerRb = null;
-            wasMoving = false;
+            playerTransform = null;
             FadeOutAndStop(fadeOutDuration);
             currentClip = null;
             isIdleLooping = false;
@@ -67,6 +49,25 @@ public class PianoTrigger : MonoBehaviour
                 idleLoopCoroutine = null;
             }
         }
+    }
+
+    private void Update()
+    {
+        if (!isPlayerOnPlatform || playerTransform == null) return;
+
+        float currentX = playerTransform.position.x;
+        bool isMoving = Mathf.Abs(currentX - lastXPosition) > 0.001f;
+
+        if (isMoving)
+        {
+            PlayMovementSound();
+        }
+        else
+        {
+            PlayIdleSound();
+        }
+
+        lastXPosition = currentX;
     }
 
     private void PlayIdleSound()

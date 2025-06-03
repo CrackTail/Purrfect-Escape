@@ -5511,11 +5511,11 @@ GameObject:
   m_Component:
   - component: {fileID: 233921833}
   - component: {fileID: 233921835}
-  - component: {fileID: 233921834}
   - component: {fileID: 233921837}
   - component: {fileID: 233921836}
   - component: {fileID: 233921839}
   - component: {fileID: 233921838}
+  - component: {fileID: 233921840}
   m_Layer: 6
   m_Name: Platform_20(PianoTrigger)
   m_TagString: Piano
@@ -5538,25 +5538,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1113168470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!251 &233921834
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233921832}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4096
-  m_RotationalOffset: 0
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 1
-  m_SurfaceArc: 160
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!61 &233921835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5588,7 +5569,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
@@ -5790,8 +5771,35 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 99df64f330028fd48beb1cf8ff43085b, type: 3}
   audioSource: {fileID: 233921838}
   idleLoopStart: 0.52
-  idleLoopEnd: 10
+  idleLoopEnd: 2
   fadeOutDuration: 1
+--- !u!50 &233921840
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233921832}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &244804928
 GameObject:
   m_ObjectHideFlags: 0
@@ -40023,8 +40031,8 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1896438736
 BoxCollider2D:
