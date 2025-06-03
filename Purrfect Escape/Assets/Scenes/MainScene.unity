@@ -10587,6 +10587,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bathtub_2_SFX
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: c1f1d6262234cc545aa721d2ef1f1db8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: c1f1d6262234cc545aa721d2ef1f1db8, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -10601,11 +10605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c1f1d6262234cc545aa721d2ef1f1db8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.511
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c1f1d6262234cc545aa721d2ef1f1db8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.082
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c1f1d6262234cc545aa721d2ef1f1db8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11148,6 +11152,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &465129589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: 0715bddff8be91e4795d7c3628e23ded, type: 3}
+  m_PrefabInstance: {fileID: 1637796733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &465129592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 0715bddff8be91e4795d7c3628e23ded, type: 3}
@@ -28775,9 +28784,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1211974862}
   - component: {fileID: 1211974861}
+  - component: {fileID: 1211974863}
+  - component: {fileID: 1211974864}
   m_Layer: 0
-  m_Name: bath
-  m_TagString: Untagged
+  m_Name: bathtub
+  m_TagString: Bathtub
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28852,6 +28863,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2037456252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1211974863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211974860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad214ff4912ca9448a4138e8caeec90c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTag: Bathtub
+  objectsToEnable:
+  - {fileID: 465129589}
+  - {fileID: 1752875976}
+  - {fileID: 1499373566}
+  enableDelays:
+  - 0
+  - 5
+  - 5
+--- !u!61 &1211974864
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211974860}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 1.0416666}
+    newSize: {x: 2, y: 1.0416666}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2, y: 1.0416666}
+  m_EdgeRadius: 0
 --- !u!1 &1224703358
 GameObject:
   m_ObjectHideFlags: 0
@@ -34779,7 +34857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1499373567
 Transform:
   m_ObjectHideFlags: 0
@@ -34789,7 +34867,7 @@ Transform:
   m_GameObject: {fileID: 1499373566}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.39, y: 3.97, z: 0.020204179}
+  m_LocalPosition: {x: 19.12, y: 2.93, z: 0.020204179}
   m_LocalScale: {x: 0.3, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37401,6 +37479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bathtub_1_SFX
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 0715bddff8be91e4795d7c3628e23ded, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 0715bddff8be91e4795d7c3628e23ded, type: 3}
       propertyPath: m_SortingOrder
       value: 7
@@ -39370,6 +39452,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 35636549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1752875976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: c1f1d6262234cc545aa721d2ef1f1db8, type: 3}
+  m_PrefabInstance: {fileID: 425108644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1752875979 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: c1f1d6262234cc545aa721d2ef1f1db8, type: 3}
