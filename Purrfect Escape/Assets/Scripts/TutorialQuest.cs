@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
 public class TutorialQuest : MonoBehaviour
 {
@@ -11,10 +12,17 @@ public class TutorialQuest : MonoBehaviour
 
     private bool playerInRange = false;
 
+    [SerializeField] private AudioClip[] meowClips; 
+    [SerializeField] private float meowDelay = 0.3f;
+
+    private AudioSource audioSource;
+
     void Start()
     {
         if (dialogueBubble != null)
             dialogueBubble.SetActive(false);
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -22,6 +30,11 @@ public class TutorialQuest : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             ShowNextDialogueLine();
+
+            if (audioSource != null && meowClips.Length > 0)
+            {
+                StartCoroutine(PlayMeowWithDelay());
+            }
         }
     }
 
@@ -32,7 +45,16 @@ public class TutorialQuest : MonoBehaviour
         dialogueBubble.SetActive(true);
         dialogueText.text = dialogueLines[currentLineIndex];
 
-        currentLineIndex = (currentLineIndex + 1) % dialogueLines.Length; 
+        currentLineIndex = (currentLineIndex + 1) % dialogueLines.Length;
+    }
+
+    private IEnumerator PlayMeowWithDelay()
+    {
+        yield return new WaitForSeconds(meowDelay);
+
+        AudioClip clip = meowClips[Random.Range(0, meowClips.Length)];
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.PlayOneShot(clip);
     }
 
     void OnTriggerEnter2D(Collider2D other)
