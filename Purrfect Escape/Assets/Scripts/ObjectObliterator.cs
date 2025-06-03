@@ -22,17 +22,12 @@ public class ExplodeOnImpact : MonoBehaviour
 
     [Tooltip("Tag assigned to ground objects.")]
     public string groundTag = "Ground";
-
-    //Sound
     public AudioClip breakSound; 
     private AudioSource audioSource;
 
     void Start()
     {
-
-        //Sound
         audioSource = GetComponent<AudioSource>();
-
         originalSpriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -61,8 +56,6 @@ public class ExplodeOnImpact : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log($"playerInRange: {playerInRange}, falling: {falling}, exploded: {exploded}, triggered: {interactionTriggered}");
-
         if (playerInRange && !falling && !exploded && !interactionTriggered && Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log("Q pressed, starting fall!");
@@ -138,8 +131,6 @@ public class ExplodeOnImpact : MonoBehaviour
         }
 
         Debug.Log("Attempting to play break sound...");
-
-        //Sound
         if (breakSound != null)
         {
             GameObject soundObj = new GameObject("TempSound");
@@ -218,7 +209,7 @@ public class ExplodeOnImpact : MonoBehaviour
         float randomY = Random.Range(0.5f, bounceStrength);
         rb.linearVelocity = new Vector2(randomX, randomY);
 
-        Destroy(piece, 5f);
+        Destroy(piece, 8f);
     }
 
     void DisablePhysics()
