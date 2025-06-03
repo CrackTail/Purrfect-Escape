@@ -2,19 +2,17 @@ using UnityEngine;
 
 public class EnableObjectsOnInteraction : MonoBehaviour
 {
-    [Header("Target to interact with")]
-    [Tooltip("Tag of the interactable object (e.g. 'Bathtub')")]
     public string interactableTag = "Bathtub";
 
-    [Header("Objects to Enable")]
-    [SerializeField] private GameObject[] objectsToEnable = new GameObject[3];
+    [SerializeField] private GameObject[] objectsToEnable = new GameObject[4];
+    [SerializeField] private float[] enableDelays = new float[4];
 
-    [Header("Enable Timings (in seconds)")]
-    [Tooltip("Specify the delay in seconds for each object to be enabled.")]
-    [SerializeField] private float[] enableDelays = new float[3];
+    [SerializeField] private GameObject[] objectsToDisableOnToggle;
+    [SerializeField] private GameObject[] objectsToKeepEnabledOnToggle;
 
     private bool playerInRange = false;
     private GameObject currentInteractable;
+    private bool isInEnabledState = false;
 
     private void Update()
     {
@@ -22,8 +20,16 @@ public class EnableObjectsOnInteraction : MonoBehaviour
         {
             if (currentInteractable != null && currentInteractable.CompareTag(interactableTag))
             {
-                Debug.Log("E pressed on Bathtub. Starting object enabling sequence...");
-                StartEnablingSequence();
+                if (!isInEnabledState)
+                {
+                    StartEnablingSequence();
+                    isInEnabledState = true;
+                }
+                else
+                {
+                    HandleToggleOff();
+                    isInEnabledState = false;
+                }
             }
         }
     }
@@ -61,7 +67,28 @@ public class EnableObjectsOnInteraction : MonoBehaviour
     private System.Collections.IEnumerator EnableAfterDelay(GameObject obj, float delay)
     {
         yield return new WaitForSeconds(delay);
-        obj.SetActive(true);
-        Debug.Log($"Enabled {obj.name} after {delay} seconds.");
+        if (obj != null)
+        {
+            obj.SetActive(true);
+        }
+    }
+
+    private void HandleToggleOff()
+    {
+        foreach (GameObject obj in objectsToDisableOnToggle)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(false);
+            }
+        }
+
+        foreach (GameObject obj in objectsToKeepEnabledOnToggle)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(true);
+            }
+        }
     }
 }
