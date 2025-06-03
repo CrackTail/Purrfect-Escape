@@ -21,6 +21,8 @@ TagManager:
   - Key_Rusty
   - Key_Pink
   - Piano
+  - Locked_Yellow
+  - Locked_Pink
   layers:
   - Default
   - TransparentFX
