@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class ComeOverCat : MonoBehaviour
 {
@@ -10,8 +11,13 @@ public class ComeOverCat : MonoBehaviour
     [SerializeField] private string dialogueLine = "This is the only message.";
     [SerializeField] private float fontSize = 36f;
 
+    [SerializeField] private AudioClip[] meowClips;
+    [SerializeField] private float meowDelay = 0.3f;
+
     private bool playerInRange = false;
     private bool dialogueVisible = true;
+
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -22,6 +28,7 @@ public class ComeOverCat : MonoBehaviour
             dialogueText.fontSize = fontSize;
             dialogueVisible = true;
         }
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -30,7 +37,20 @@ public class ComeOverCat : MonoBehaviour
         {
             dialogueBubble.SetActive(false);
             dialogueVisible = false;
+            if (audioSource != null && meowClips.Length > 0)
+            {
+                StartCoroutine(PlayMeowWithDelay());
+            }
         }
+    }
+
+    private IEnumerator PlayMeowWithDelay()
+    {
+        yield return new WaitForSeconds(meowDelay);
+
+        AudioClip clip = meowClips[Random.Range(0, meowClips.Length)];
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.PlayOneShot(clip);
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class CatQuest : MonoBehaviour
 {
@@ -28,6 +29,12 @@ public class CatQuest : MonoBehaviour
 
     private PlayerInventory inventory;
 
+    [Header("Meow Settings")]
+    [SerializeField] private AudioClip[] meowClips;
+    [SerializeField] private float meowDelay = 0.3f;
+
+    private AudioSource audioSource;
+
     void Start()
     {
         inventory = FindAnyObjectByType<PlayerInventory>();
@@ -39,8 +46,13 @@ public class CatQuest : MonoBehaviour
         {
             Debug.Log($"CatQuest found PlayerInventory instance: {inventory.name}");
         }
+
         if (dialogueBubble != null)
             dialogueBubble.SetActive(false);
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            Debug.LogWarning("Missing AudioSource on CatQuest GameObject.");
     }
 
     void Update()
@@ -50,12 +62,15 @@ public class CatQuest : MonoBehaviour
             if (!hasReceivedItem && HasRequiredItem())
             {
                 ReceiveItem();
-                ShowDialogue(); // Immediately show reward dialogue
+                ShowDialogue();
             }
             else
             {
                 ShowDialogue();
             }
+
+            if (audioSource != null && meowClips.Length > 0)
+                StartCoroutine(PlayMeowWithDelay());
         }
     }
 
@@ -78,7 +93,7 @@ public class CatQuest : MonoBehaviour
                 dialogueIndex++;
                 if (dialogueIndex >= dialogueBeforeLines.Length)
                 {
-                    dialogueIndex = 0; // Loop back or stay at end, depending on your preference
+                    dialogueIndex = 0;
                 }
             }
         }
@@ -88,14 +103,10 @@ public class CatQuest : MonoBehaviour
     {
         switch (requiredItem)
         {
-            case RequiredItem.Fish:
-                return inventory.hasFish;
-            case RequiredItem.Necklace:
-                return inventory.hasNecklace;
-            case RequiredItem.Anger:
-                return inventory.hasAnger;
-            default:
-                return false;
+            case RequiredItem.Fish: return inventory.hasFish;
+            case RequiredItem.Necklace: return inventory.hasNecklace;
+            case RequiredItem.Anger: return inventory.hasAnger;
+            default: return false;
         }
     }
 
@@ -105,15 +116,9 @@ public class CatQuest : MonoBehaviour
 
         switch (requiredItem)
         {
-            case RequiredItem.Fish:
-                inventory.hasFish = false;
-                break;
-            case RequiredItem.Necklace:
-                inventory.hasNecklace = false;
-                break;
-            case RequiredItem.Anger:
-                inventory.hasAnger = false;
-                break;
+            case RequiredItem.Fish: inventory.hasFish = false; break;
+            case RequiredItem.Necklace: inventory.hasNecklace = false; break;
+            case RequiredItem.Anger: inventory.hasAnger = false; break;
         }
 
         inventory.UpdateInventory(requiredItem.ToString(), false);
@@ -123,6 +128,14 @@ public class CatQuest : MonoBehaviour
 
         if (NPCGives != null)
             NPCGives.SetActive(true);
+    }
+
+    private IEnumerator PlayMeowWithDelay()
+    {
+        yield return new WaitForSeconds(meowDelay);
+        AudioClip clip = meowClips[Random.Range(0, meowClips.Length)];
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.PlayOneShot(clip);
     }
 
     void OnTriggerEnter2D(Collider2D other)
