@@ -8,8 +8,11 @@ public class CatQuest : MonoBehaviour
     public GameObject NPCGives;
     public GameObject NPCTakes;
 
-    [SerializeField] private string dialogueBefore = "Default request message";
+    [TextArea]
+    [SerializeField] private string[] dialogueBeforeLines = { "Default request message 1", "Default request message 2" };
+    [TextArea]
     [SerializeField] private string dialogueAfter = "Default reward message";
+
     [SerializeField] private float fontSizeBefore = 36f;
     [SerializeField] private float fontSizeAfter = 36f;
 
@@ -21,6 +24,7 @@ public class CatQuest : MonoBehaviour
 
     private bool playerInRange = false;
     private bool hasReceivedItem = false;
+    private int dialogueIndex = 0;
 
     private PlayerInventory inventory;
 
@@ -46,9 +50,12 @@ public class CatQuest : MonoBehaviour
             if (!hasReceivedItem && HasRequiredItem())
             {
                 ReceiveItem();
+                ShowDialogue(); // Immediately show reward dialogue
             }
-
-            ShowDialogue();
+            else
+            {
+                ShowDialogue();
+            }
         }
     }
 
@@ -63,8 +70,17 @@ public class CatQuest : MonoBehaviour
         }
         else
         {
-            dialogueText.text = dialogueBefore;
-            dialogueText.fontSize = fontSizeBefore;
+            if (dialogueBeforeLines.Length > 0)
+            {
+                dialogueText.text = dialogueBeforeLines[dialogueIndex];
+                dialogueText.fontSize = fontSizeBefore;
+
+                dialogueIndex++;
+                if (dialogueIndex >= dialogueBeforeLines.Length)
+                {
+                    dialogueIndex = 0; // Loop back or stay at end, depending on your preference
+                }
+            }
         }
     }
 
@@ -85,38 +101,28 @@ public class CatQuest : MonoBehaviour
 
     void ReceiveItem()
     {
-        Debug.Log($"Before removing item, inventory state:");
-        Debug.Log($"Fish: {inventory.hasFish}, Necklace: {inventory.hasNecklace}, Anger: {inventory.hasAnger}");
-
         hasReceivedItem = true;
 
         switch (requiredItem)
         {
             case RequiredItem.Fish:
                 inventory.hasFish = false;
-                Debug.Log("Item taken: Fish");
                 break;
             case RequiredItem.Necklace:
                 inventory.hasNecklace = false;
-                Debug.Log("Item taken: Necklace");
                 break;
             case RequiredItem.Anger:
                 inventory.hasAnger = false;
-                Debug.Log("Item taken: Anger");
                 break;
         }
 
-        Debug.Log($"After removing item, inventory state:");
-        Debug.Log($"Fish: {inventory.hasFish}, Necklace: {inventory.hasNecklace}, Anger: {inventory.hasAnger}");
-
-        // Optionally force update UI for testing:
         inventory.UpdateInventory(requiredItem.ToString(), false);
 
         if (NPCTakes != null)
             Destroy(NPCTakes);
 
         if (NPCGives != null)
-            NPCGives.SetActive(true); // NPCGives should be the item to spawn in the scene
+            NPCGives.SetActive(true);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -131,6 +137,7 @@ public class CatQuest : MonoBehaviour
         {
             playerInRange = false;
             dialogueBubble.SetActive(false);
+            dialogueIndex = 0;
         }
     }
 }

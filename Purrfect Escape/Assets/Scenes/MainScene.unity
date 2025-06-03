@@ -9360,8 +9360,9 @@ MonoBehaviour:
   dialogueText: {fileID: 72572727}
   NPCGives: {fileID: 1034101192}
   NPCTakes: {fileID: 42363463}
-  dialogueBefore: That old hag has been on my nerves lately, I want you to steal
-    something precious from her. hehehe!
+  dialogueBeforeLines:
+  - That old hag has been on my nerves lately, I want you to steal something precious
+    from her. hehehe!
   dialogueAfter: Good work my thief prodigy, now begone. Use this key to get to my
     other friend.
   fontSizeBefore: 100
@@ -16431,8 +16432,9 @@ MonoBehaviour:
   dialogueText: {fileID: 1427541886}
   NPCGives: {fileID: 586799034}
   NPCTakes: {fileID: 1499373566}
-  dialogueBefore: Seen any food nearby? This place is dreadfull and the neighbor
-    upstairs is noisy...
+  dialogueBeforeLines:
+  - Seen any food nearby? This place is dreadfull and the neighbor upstairs is noisy...
+  - To pick up the fish press "E" on the fish and bring it to me
   dialogueAfter: Here have this key, my paws are tired of carrying it.
   fontSizeBefore: 100
   fontSizeAfter: 120
@@ -30788,9 +30790,12 @@ MonoBehaviour:
   dialogueText: {fileID: 1042673699}
   NPCGives: {fileID: 105160203}
   NPCTakes: {fileID: 1799414575}
-  dialogueBefore: Come back after you made granny angry enough.
+  dialogueBeforeLines:
+  - Come back after you made granny angry enough.
+  - To Destroy items press "Q" on the items with a yellow outline, careful though
+    it will make her angry...
   dialogueAfter: I like the place now way more now, here have this, found it in the
-    dumpster yesterday.
+    dumpster yesterday. Its pretty dirty maybe you can do something with it...
   fontSizeBefore: 90
   fontSizeAfter: 90
   requiredItem: 2
