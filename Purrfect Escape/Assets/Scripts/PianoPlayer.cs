@@ -12,29 +12,51 @@ public class PianoTrigger : MonoBehaviour
     [Range(0, 10)]
     public float idleLoopEnd = 5f;
 
+    public float fadeInDuration = 0.2f;
     public float fadeOutDuration = 0.5f;
 
     private bool isPlayerOnPlatform;
-    private Transform playerTransform;
-    private Vector2 lastPosition;
+    private Rigidbody2D playerRb;
+    private bool wasMoving;
     private AudioClip currentClip;
 
-    private bool isIdleLooping;
-    private bool isPlayingMovement;
-
     private Coroutine fadeOutCoroutine;
+    private Coroutine fadeInCoroutine;
     private Coroutine idleLoopCoroutine;
+
+    private float previousPlayerX;
+    private float previousPlayerY;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
-            playerTransform = collision.collider.transform;
-            lastPosition = playerTransform.position;
+            playerRb = collision.collider.GetComponent<Rigidbody2D>();
             isPlayerOnPlatform = true;
-            isPlayingMovement = false;
+            previousPlayerX = playerRb.position.x;
+            previousPlayerY = playerRb.position.y;
             PlayIdleSound();
         }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!isPlayerOnPlatform || playerRb == null) return;
+
+        bool isMoving = Mathf.Abs(playerRb.position.x - previousPlayerX) > 0.001f || Mathf.Abs(playerRb.position.y - previousPlayerY) > 0.001f;
+        previousPlayerX = playerRb.position.x;
+        previousPlayerY = playerRb.position.y;
+
+        if (isMoving && !wasMoving)
+        {
+            PlayMovementSound();
+        }
+        else if (!isMoving && wasMoving)
+        {
+            PlayIdleSound();
+        }
+
+        wasMoving = isMoving;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -42,11 +64,10 @@ public class PianoTrigger : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             isPlayerOnPlatform = false;
-            playerTransform = null;
-            isPlayingMovement = false;
+            playerRb = null;
+            wasMoving = false;
             FadeOutAndStop(fadeOutDuration);
             currentClip = null;
-            isIdleLooping = false;
             if (idleLoopCoroutine != null)
             {
                 StopCoroutine(idleLoopCoroutine);
@@ -55,28 +76,10 @@ public class PianoTrigger : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (!isPlayerOnPlatform || playerTransform == null) return;
-
-        Vector2 currentPosition = playerTransform.position;
-        bool isMoving = Vector2.Distance(currentPosition, lastPosition) > 0.001f;
-
-        if (isMoving && !isPlayingMovement)
-        {
-            PlayMovementSound();
-        }
-        else if (!isMoving && isPlayingMovement)
-        {
-            PlayIdleSound();
-        }
-
-        lastPosition = currentPosition;
-    }
-
     private void PlayIdleSound()
     {
-        if (idleSounds.Length == 0 || !isActiveAndEnabled) return;
+        if (idleSounds.Length == 0) return;
+        if (!isActiveAndEnabled) return;
 
         AudioClip clip = idleSounds[Random.Range(0, idleSounds.Length)];
         if (clip != currentClip)
@@ -84,24 +87,19 @@ public class PianoTrigger : MonoBehaviour
             currentClip = clip;
             audioSource.clip = currentClip;
             audioSource.loop = false;
-            audioSource.time = Mathf.Clamp(idleLoopStart, 0, clip.length);
-            audioSource.volume = 1f;
+            audioSource.time = Mathf.Clamp(idleLoopStart, 0f, clip.length);
+            audioSource.volume = 0f;
             audioSource.Play();
-            isIdleLooping = true;
-            isPlayingMovement = false;
-
             if (fadeOutCoroutine != null)
             {
                 StopCoroutine(fadeOutCoroutine);
                 fadeOutCoroutine = null;
             }
-
-            if (idleLoopCoroutine != null)
+            if (fadeInCoroutine != null)
             {
-                StopCoroutine(idleLoopCoroutine);
+                StopCoroutine(fadeInCoroutine);
             }
-
-            idleLoopCoroutine = StartCoroutine(IdleLoopRoutine());
+            fadeInCoroutine = StartCoroutine(FadeInRoutine(fadeInDuration));
         }
     }
 
@@ -116,17 +114,18 @@ public class PianoTrigger : MonoBehaviour
             audioSource.clip = currentClip;
             audioSource.loop = true;
             audioSource.time = Random.Range(0f, clip.length);
-            audioSource.volume = 1f;
+            audioSource.volume = 0f;
             audioSource.Play();
-            isIdleLooping = false;
-            isPlayingMovement = true;
-
             if (fadeOutCoroutine != null)
             {
                 StopCoroutine(fadeOutCoroutine);
                 fadeOutCoroutine = null;
             }
-
+            if (fadeInCoroutine != null)
+            {
+                StopCoroutine(fadeInCoroutine);
+            }
+            fadeInCoroutine = StartCoroutine(FadeInRoutine(fadeInDuration));
             if (idleLoopCoroutine != null)
             {
                 StopCoroutine(idleLoopCoroutine);
@@ -142,11 +141,29 @@ public class PianoTrigger : MonoBehaviour
         if (fadeOutCoroutine != null)
             StopCoroutine(fadeOutCoroutine);
         fadeOutCoroutine = StartCoroutine(FadeOutRoutine(duration));
+        if (fadeInCoroutine != null)
+        {
+            StopCoroutine(fadeInCoroutine);
+            fadeInCoroutine = null;
+        }
         if (idleLoopCoroutine != null)
         {
             StopCoroutine(idleLoopCoroutine);
             idleLoopCoroutine = null;
         }
+    }
+
+    private System.Collections.IEnumerator FadeInRoutine(float duration)
+    {
+        float time = 0f;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(0f, 1f, time / duration);
+            yield return null;
+        }
+        audioSource.volume = 1f;
+        fadeInCoroutine = null;
     }
 
     private System.Collections.IEnumerator FadeOutRoutine(float duration)
@@ -164,16 +181,5 @@ public class PianoTrigger : MonoBehaviour
         audioSource.Stop();
         audioSource.volume = startVolume;
         fadeOutCoroutine = null;
-    }
-
-    private System.Collections.IEnumerator IdleLoopRoutine()
-    {
-        while (isIdleLooping)
-        {
-            yield return new WaitUntil(() => !audioSource.isPlaying);
-            if (!isIdleLooping) yield break;
-            audioSource.time = Mathf.Clamp(idleLoopStart, 0, currentClip.length);
-            audioSource.Play();
-        }
     }
 }

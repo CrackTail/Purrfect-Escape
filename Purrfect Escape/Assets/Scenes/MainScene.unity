@@ -5770,9 +5770,10 @@ MonoBehaviour:
   movementSounds:
   - {fileID: 8300000, guid: 99df64f330028fd48beb1cf8ff43085b, type: 3}
   audioSource: {fileID: 233921838}
-  idleLoopStart: 0.52
-  idleLoopEnd: 2
-  fadeOutDuration: 1
+  idleLoopStart: 0
+  idleLoopEnd: 10
+  fadeInDuration: 0
+  fadeOutDuration: 0.5
 --- !u!50 &233921840
 Rigidbody2D:
   serializedVersion: 5
@@ -22640,11 +22641,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c9bf0450ebd0baf4a988ea8d2a2842d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11
+      value: -21.9
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c9bf0450ebd0baf4a988ea8d2a2842d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 4.31
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c9bf0450ebd0baf4a988ea8d2a2842d1, type: 3}
       propertyPath: m_LocalPosition.z
