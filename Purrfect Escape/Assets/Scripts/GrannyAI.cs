@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [System.Serializable]
 public class FloorPatrolPoints
 {
@@ -8,6 +9,7 @@ public class FloorPatrolPoints
     public Transform pointB;
     public Transform floorCenter;
 }
+
 public class GrannyAI : MonoBehaviour
 {
     public FloorPatrolPoints[] patrolFloors;
@@ -23,19 +25,20 @@ public class GrannyAI : MonoBehaviour
     private bool justTeleported = false;
     [SerializeField] private float teleportCooldown = 5.0f;
     private GameObject lastTeleporter = null;
+    private bool facingLeft = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         SetFloor(currentFloorIndex);
-        // anim.SetBool("isRunning", true); when we got animation ill use this, don't delete.
     }
 
     void Update()
     {
         float moveDirection = currentPoint == patrolFloors[currentFloorIndex].pointB ? 1 : -1;
         rb.linearVelocity = new Vector2(moveDirection * grannyAnger.grannySpeed, 0);
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, InteractionRange, teleporterLayer);
 
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f)
@@ -43,8 +46,10 @@ public class GrannyAI : MonoBehaviour
             currentPoint = currentPoint == patrolFloors[currentFloorIndex].pointB
                 ? patrolFloors[currentFloorIndex].pointA
                 : patrolFloors[currentFloorIndex].pointB;
-            Flip(moveDirection);
+
+            FlipIfNeeded(currentPoint.position.x - transform.position.x);
         }
+
         if (!justTeleported)
         {
             foreach (Collider2D hit in hits)
@@ -61,13 +66,11 @@ public class GrannyAI : MonoBehaviour
                             lastTeleporter = hit.gameObject;
                             Invoke(nameof(ResetTeleportFlag), teleportCooldown);
                             Invoke(nameof(UpdatePatrolFloor), 0.1f);
-                            Debug.Log("Granny teleported!");
                             break;
                         }
                     }
                     else
                     {
-                        Debug.Log("Granny saw the teleporter but chose not to use it.");
                         lastTeleporter = hit.gameObject;
                         justTeleported = true;
                         Invoke(nameof(ResetTeleportFlag), teleportCooldown);
@@ -77,6 +80,7 @@ public class GrannyAI : MonoBehaviour
             }
         }
     }
+
     private void UpdatePatrolFloor()
     {
         float minDistance = float.MaxValue;
@@ -98,9 +102,22 @@ public class GrannyAI : MonoBehaviour
             SetFloor(currentFloorIndex);
         }
     }
+
     private void SetFloor(int floorIndex)
     {
         currentPoint = patrolFloors[floorIndex].pointA;
+        FlipIfNeeded(currentPoint.position.x - transform.position.x);
+    }
+
+    void FlipIfNeeded(float direction)
+    {
+        if ((direction > 0 && facingLeft) || (direction < 0 && !facingLeft))
+        {
+            facingLeft = !facingLeft;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -109,17 +126,12 @@ public class GrannyAI : MonoBehaviour
             gameOverPanel.SetActive(true);
     }
 
-    void Flip(float moveDirection)
-    {
-        Vector3 localScale = transform.localScale;
-        localScale.x = moveDirection > 0 ? Mathf.Abs(localScale.x) : -Mathf.Abs(localScale.x);
-        transform.localScale = localScale;
-    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, InteractionRange);
     }
+
     private void OnDrawGizmos()
     {
         if (Application.isPlaying)
@@ -135,6 +147,7 @@ public class GrannyAI : MonoBehaviour
                 }
             }
         }
+
         if (patrolFloors != null)
         {
             foreach (var floor in patrolFloors)
@@ -162,6 +175,7 @@ public class GrannyAI : MonoBehaviour
             Gizmos.DrawLine(transform.position, currentPoint.position);
         }
     }
+
     private void ResetTeleportFlag()
     {
         justTeleported = false;
