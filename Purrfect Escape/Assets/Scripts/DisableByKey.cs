@@ -6,7 +6,13 @@ public class DisableOnKeyPickup : MonoBehaviour
     [SerializeField] private GameObject keyItem;
 
     [Header("Door that will appear when this one disables")]
-    [SerializeField] private GameObject doorOpen; // Enable this when the door unlocks
+    [SerializeField] private GameObject doorOpen;
+
+    [Header("Sound to play when key is missing")]
+    [SerializeField] private AudioClip missingKeySound;
+
+    [Header("Assign AudioSource to play the missing key sound")]
+    [SerializeField] private AudioSource audioSource;
 
     private PlayerInventory playerInventory;
     private string keyTag;
@@ -38,7 +44,12 @@ public class DisableOnKeyPickup : MonoBehaviour
 
         if (doorOpen != null)
         {
-            doorOpen.SetActive(false); // Hide open door by default
+            doorOpen.SetActive(false);
+        }
+
+        if (audioSource == null)
+        {
+            Debug.LogWarning("AudioSource not assigned on " + gameObject.name);
         }
     }
 
@@ -72,6 +83,12 @@ public class DisableOnKeyPickup : MonoBehaviour
             else
             {
                 Debug.Log("Missing required key: " + keyTag);
+
+                if (missingKeySound != null && audioSource != null)
+                {
+                    audioSource.clip = missingKeySound;
+                    audioSource.Play();
+                }
             }
         }
     }

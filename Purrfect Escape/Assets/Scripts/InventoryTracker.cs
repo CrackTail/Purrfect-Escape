@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
-    [SerializeField] private Image[] itemSlots = new Image[2];  // Index 0 = Slot 1, Index 1 = Slot 2
+    [SerializeField] private Image[] itemSlots = new Image[2];
     [SerializeField] private Vector2[] slotCoordinates = new Vector2[2];
 
     private const int SLOT_ONE_INDEX = 0;

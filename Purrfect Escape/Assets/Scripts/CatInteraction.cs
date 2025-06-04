@@ -8,32 +8,13 @@ public class CatInteraction : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Breakable"))
         {
-            Destroy(col.gameObject); // cat breaks the object
+            Destroy(col.gameObject);
 
             if (grannyAnger != null)
             {
-                grannyAnger.RegisterObjectDestroyed(); // 🔥 level-based anger
+                grannyAnger.RegisterObjectDestroyed();
             }
         }
     }
 
 }
-//using UnityEngine;
-
-//public class CatInteraction : MonoBehaviour
-//{
-//    public GrannyAnger grannyAnger;
-
-//    void OnCollisionEnter2D(Collision2D col)
-//    {
-//        if (col.gameObject.CompareTag("Breakable"))
-//        {
-//            Destroy(col.gameObject); // cat breaks the object
-
-//            if (grannyAnger != null)
-//            {
-//                grannyAnger.IncreaseAngerLevel(); // 🔥 level-based anger
-//            }
-//        }
-//    }
-//}

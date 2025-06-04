@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     float elapsedTime;
-    float StartTimeValue=3600f;
+    float StartTimeValue=1800f;
     void Update()
     {
         elapsedTime += Time.deltaTime;

@@ -15,6 +15,10 @@ public class PianoTrigger : MonoBehaviour
     public float fadeInDuration = 0.2f;
     public float fadeOutDuration = 0.5f;
 
+    [Header("Compressor-like behavior")]
+    [Range(0f, 1f)]
+    public float maxVolumeThreshold = 0.8f; // <-- volume cap
+
     private bool isPlayerOnPlatform;
     private Rigidbody2D playerRb;
     private bool wasMoving;
@@ -78,8 +82,7 @@ public class PianoTrigger : MonoBehaviour
 
     private void PlayIdleSound()
     {
-        if (idleSounds.Length == 0) return;
-        if (!isActiveAndEnabled) return;
+        if (idleSounds.Length == 0 || !isActiveAndEnabled) return;
 
         AudioClip clip = idleSounds[Random.Range(0, idleSounds.Length)];
         if (clip != currentClip)
@@ -90,22 +93,14 @@ public class PianoTrigger : MonoBehaviour
             audioSource.time = Mathf.Clamp(idleLoopStart, 0f, clip.length);
             audioSource.volume = 0f;
             audioSource.Play();
-            if (fadeOutCoroutine != null)
-            {
-                StopCoroutine(fadeOutCoroutine);
-                fadeOutCoroutine = null;
-            }
-            if (fadeInCoroutine != null)
-            {
-                StopCoroutine(fadeInCoroutine);
-            }
+            StopAllFadeCoroutines();
             fadeInCoroutine = StartCoroutine(FadeInRoutine(fadeInDuration));
         }
     }
 
     private void PlayMovementSound()
     {
-        if (movementSounds.Length == 0) return;
+        if (movementSounds.Length == 0 || !isActiveAndEnabled) return;
 
         AudioClip clip = movementSounds[Random.Range(0, movementSounds.Length)];
         if (clip != currentClip)
@@ -116,21 +111,8 @@ public class PianoTrigger : MonoBehaviour
             audioSource.time = Random.Range(0f, clip.length);
             audioSource.volume = 0f;
             audioSource.Play();
-            if (fadeOutCoroutine != null)
-            {
-                StopCoroutine(fadeOutCoroutine);
-                fadeOutCoroutine = null;
-            }
-            if (fadeInCoroutine != null)
-            {
-                StopCoroutine(fadeInCoroutine);
-            }
+            StopAllFadeCoroutines();
             fadeInCoroutine = StartCoroutine(FadeInRoutine(fadeInDuration));
-            if (idleLoopCoroutine != null)
-            {
-                StopCoroutine(idleLoopCoroutine);
-                idleLoopCoroutine = null;
-            }
         }
     }
 
@@ -138,9 +120,17 @@ public class PianoTrigger : MonoBehaviour
     {
         if (!isActiveAndEnabled) return;
 
-        if (fadeOutCoroutine != null)
-            StopCoroutine(fadeOutCoroutine);
+        StopAllFadeCoroutines();
         fadeOutCoroutine = StartCoroutine(FadeOutRoutine(duration));
+    }
+
+    private void StopAllFadeCoroutines()
+    {
+        if (fadeOutCoroutine != null)
+        {
+            StopCoroutine(fadeOutCoroutine);
+            fadeOutCoroutine = null;
+        }
         if (fadeInCoroutine != null)
         {
             StopCoroutine(fadeInCoroutine);
@@ -159,10 +149,10 @@ public class PianoTrigger : MonoBehaviour
         while (time < duration)
         {
             time += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(0f, 1f, time / duration);
+            audioSource.volume = Mathf.Min(Mathf.Lerp(0f, 1f, time / duration), maxVolumeThreshold);
             yield return null;
         }
-        audioSource.volume = 1f;
+        audioSource.volume = maxVolumeThreshold;
         fadeInCoroutine = null;
     }
 

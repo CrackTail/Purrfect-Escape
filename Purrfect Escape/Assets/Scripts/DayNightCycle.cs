@@ -1,26 +1,33 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class PostExposureFade : MonoBehaviour
+public class DayAndNightCycle : MonoBehaviour
 {
-    public Volume volume;
-    ColorAdjustments ca;
-    float duration = 1800f;
-    float t;
-    bool reverse;
+    [SerializeField] private Light2D globalLight;
+    [SerializeField] private float dayIntensity = 1.0f;
+    [SerializeField] private float nightIntensity = 0.3f;
+    [SerializeField] private float cycleDurationMinutes = 15f;
 
-    void Start()
+    private float cycleDurationSeconds;
+    private float t;
+    private bool reverse;
+
+    private void Start()
     {
-        volume ??= GetComponent<Volume>();
-        if (!volume.profile.TryGet(out ca)) enabled = false;
+        if (globalLight == null)
+        {
+            enabled = false;
+            return;
+        }
+
+        cycleDurationSeconds = cycleDurationMinutes * 60f;
     }
 
-    void Update()
+    private void Update()
     {
         t += (reverse ? -1 : 1) * Time.deltaTime;
-        t = Mathf.Clamp(t, 0, duration);
-        ca.postExposure.Override(Mathf.Lerp(0, -4, t / duration));
-        if (t == 0 || t == duration) reverse = !reverse;
+        t = Mathf.Clamp(t, 0, cycleDurationSeconds);
+        globalLight.intensity = Mathf.Lerp(dayIntensity, nightIntensity, t / cycleDurationSeconds);
+        if (t == 0 || t == cycleDurationSeconds) reverse = !reverse;
     }
 }

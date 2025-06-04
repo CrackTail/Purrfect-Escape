@@ -35,7 +35,6 @@ public class GrannyAI : MonoBehaviour
     void Update()
     {
         float moveDirection = currentPoint == patrolFloors[currentFloorIndex].pointB ? 1 : -1;
-        //rb.linearVelocity = new Vector2(moveDirection * speed, 0);
         rb.linearVelocity = new Vector2(moveDirection * grannyAnger.grannySpeed, 0);
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, InteractionRange, teleporterLayer);
 

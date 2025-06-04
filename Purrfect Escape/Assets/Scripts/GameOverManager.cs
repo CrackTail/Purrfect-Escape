@@ -4,29 +4,23 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverPanel;
-
-    // Call this when the player dies or the game ends
     public void ShowGameOver()
     {
         gameOverPanel.SetActive(true);
-        Time.timeScale = 0f; // Optional: freeze time
+        Time.timeScale = 0f;
     }
-
-    // Called by "Play Again" button
     public void PlayAgain()
     {
-        Time.timeScale = 1f; // Reset time
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-    // Called by "Exit Game" button
     public void ExitGame()
     {
-        Time.timeScale = 1f; // Reset time just in case
+        Time.timeScale = 1f;
         Application.Quit();
 
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; // Allows exiting in Editor
+        UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
 }
