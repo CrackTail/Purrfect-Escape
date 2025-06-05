@@ -9948,8 +9948,7 @@ MonoBehaviour:
   dialogueBeforeLines:
   - <b>That old hag has been on my nerves lately, I want you to steal something precious
     from her. hehehe!
-  dialogueAfter: <b>Good work my thief prodigy, now begone. Use this key to get to
-    my other friend.
+  dialogueAfter: <b>Take it and begone! I wonder how you can get the last key...
   fontSizeBefore: 90
   fontSizeAfter: 90
   requiredItem: 1
@@ -13446,7 +13445,7 @@ Transform:
   m_GameObject: {fileID: 509786349}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17974897, y: 0.536, z: 0}
+  m_LocalPosition: {x: -0.17974897, y: 0.454, z: 0}
   m_LocalScale: {x: 0.3721498, y: 0.3721498, z: 0.3721498}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16226,7 +16225,7 @@ Transform:
   m_GameObject: {fileID: 625967950}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13093399, y: 0.536, z: 0}
+  m_LocalPosition: {x: 0.13093399, y: 0.457, z: 0}
   m_LocalScale: {x: 0.356566, y: 0.42797226, z: 0.3721498}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16435,7 +16434,7 @@ Transform:
   m_GameObject: {fileID: 632019106}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.037215117, y: -0.04, z: 0}
+  m_LocalPosition: {x: -0.037215117, y: -0.128, z: 0}
   m_LocalScale: {x: 0.43463373, y: 0.43463373, z: 0.43463373}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18163,8 +18162,8 @@ MonoBehaviour:
     fish escaped to the great <color=#0000FF>ocean</color> of this house...'
   - <b>im too scared to go close to the<color=#0000FF> water</color>, so maybe you
     could fetch it for me?
-  - <b>To pick up the fish press<color=#006400> "E"</color> on the fish and bring
-    it to me
+  - "<b>To pick it up - press <color=#00FF00>\u201CE\u201D</color> on the fish and
+    bring it to me."
   dialogueAfter: Here have this key, my paws are too tired of carrying it.
   fontSizeBefore: 80
   fontSizeAfter: 80
@@ -34866,12 +34865,13 @@ MonoBehaviour:
   NPCGives: {fileID: 105160203}
   NPCTakes: {fileID: 1799414575}
   dialogueBeforeLines:
-  - <b>Come back after you made granny <color=#FF0000>angry</color> enough.
-  - <b>To <color=#FF0000>Destroy</color> items press<color=#FF0000></color> "Q" on
-    the items with a white outline. Careful though, it will make her <color=#FF0000>angry</color>...
-  dialogueAfter: <b>I like the place now way more now, here have this, found it in
-    the dumpster yesterday. Its pretty <color=#0000FF>dirty</color>,  maybe you can
-    do something with it...
+  - <b>This won't work. Make grandma<color=#FF0000> angry</color> - I want to see
+    what you're capable of!
+  - "<b>To Destroy items press<color=#FF0000> \u201DQ\" </color>on the items with
+    a white outline. It will make her<color=#FF0000> angry and fast</color>... Go
+    wild!\r\n"
+  dialogueAfter: "<b>You made one hell of a mess. Here is your key, it\u2019s pretty<color=#0000FF>
+    dirty</color>, maybe you can clean it up..."
   fontSizeBefore: 90
   fontSizeAfter: 90
   requiredItem: 2
@@ -47623,12 +47623,11 @@ MonoBehaviour:
   dialogueBubble: {fileID: 1603026490}
   dialogueText: {fileID: 504330322}
   dialogueLines:
-  - <b>I heard that you're planning your purrfect escape!
-  - <b>Talk to the other Cats to see if you can find a way out, they might know something.
-  - <b>Oh and don't forget use<color=#FF0000> "tab"</color> to see the<color=#FF0000>
-    full house</color> and press <color=#00FF00>"R"</color> on one of the<color=#00FF00>
-    boxes</color> to <color=#00FF00>hide</color> from granny.
-  - <b>Goodluck! I wish you the best!
+  - <b>You dream of more than naps and endless food, right?
+  - <b>Talk to the other cats to see if you can find a way out. Press<color=#FF0000>
+    "tab"</color> to inspect the house. <b>Press<color=#FF0000> "R"</color> on one
+    of the<color=#FF0000> boxes</color> to hide.
+  - "<b>Go! See what\u2019s out there! Become the cat you were meant to be..."
   meowClips:
   - {fileID: 8300000, guid: f4adeded20a140d49a6d9f24e097619b, type: 3}
   - {fileID: 8300000, guid: 596b35541908edd4597d181e0d847ff2, type: 3}
@@ -47651,9 +47650,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBubble: {fileID: 504936225}
   dialogueText: {fileID: 1116907314}
-  dialogueLine: '<b>Meow Meow Meow!!
-
-    (Come over here!)'
+  dialogueLine: "<b>Psst kid! Press<color=#00FF00> \u2018E\u2019</color> to talk
+    to me!"
   fontSize: 100
   meowClips:
   - {fileID: 8300000, guid: f4adeded20a140d49a6d9f24e097619b, type: 3}
@@ -48213,7 +48211,7 @@ Transform:
   m_GameObject: {fileID: 2029654135}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.117, y: -6.37, z: 0}
+  m_LocalPosition: {x: -12.117, y: -6.557, z: 0}
   m_LocalScale: {x: 1.13, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
