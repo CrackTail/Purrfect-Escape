@@ -47623,8 +47623,7 @@ MonoBehaviour:
   dialogueBubble: {fileID: 1603026490}
   dialogueText: {fileID: 504330322}
   dialogueLines:
-  - <b>You have been a bad Cat recently and granny wants to punish you. Youre gonna
-    have to get out if you don't want her to take you.
+  - <b>I heard that you're planning your purrfect escape!
   - <b>Talk to the other Cats to see if you can find a way out, they might know something.
   - <b>Oh and don't forget use<color=#FF0000> "tab"</color> to see the<color=#FF0000>
     full house</color> and press <color=#00FF00>"R"</color> on one of the<color=#00FF00>
