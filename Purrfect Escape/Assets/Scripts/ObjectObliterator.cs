@@ -62,19 +62,6 @@ public class ExplodeOnImpact : MonoBehaviour
             interactionTriggered = true;
             StartFall();
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Debug.Log("Manual sound trigger");
-            if (audioSource != null && breakSound != null)
-            {
-                audioSource.PlayOneShot(breakSound);
-            }
-            else
-            {
-                Debug.LogWarning("AudioSource or BreakSound are not connected!");
-            }
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
